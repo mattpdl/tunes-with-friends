@@ -37,7 +37,8 @@ Tunes with Friends is a social networking app designed to connect Spotify users 
 
 * *User can view the the song currently being listened to by another user on their profile page.*
 * *User can add tags to their posts.*
-* *User can view and search for posts with specific tags.*
+* *User can search for other users and artists.*
+* *User can search for posts with specific tags.*
 * *User can tap a button on an artist's page to express their intent to attend a concert.*
 
 ### 2. Screen Archetypes
@@ -46,7 +47,11 @@ Tunes with Friends is a social networking app designed to connect Spotify users 
    * User can login with their Spotify account.
 * Feed
    * User can follow other users and see other users' posts on their feed.
+* Post Details Screen
    * User can comment on other users' posts.
+* *Search*
+   * *User can search for other users and artists.*
+   * *User can search for posts with specific tags.*
 * Post Creation Screen
    * User can post song samples from Spotify.
    * User can post snippets of song lyrics.
@@ -57,25 +62,36 @@ Tunes with Friends is a social networking app designed to connect Spotify users 
 * Artist Page
    * User can view upcoming nearby concerts on an artist's page.
    * *User can tap a button on an artist's page to express their intent to attend a concert.*
-* *Search*
-   * *User can view and search for posts with specific tags.*
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Feed
+* *Search*
+* New Post
+* Profile
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Login Screen
+   * => Feed
+* Feed
+   * => Post Details Screen
+   * => Profile
+* Post Details Screen
+   * => Profile
+   * => Artist Page
+* *Search*
+   * => Post Details Screen
+   * => Profile
+   * => Artist Page
+* Post Creation Screen
+   * => Feed
+* Profile
+   * => Artist Page
+* Artist Page
+   * => *Search (for viewing posts with relevant tags)*
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
