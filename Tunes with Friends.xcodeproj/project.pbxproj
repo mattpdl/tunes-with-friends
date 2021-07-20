@@ -3,19 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14E88B60C7F9A08457467E6E /* Pods_Tunes_with_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D94044CC62C4E299FEFA673 /* Pods_Tunes_with_Friends.framework */; };
+		28D3D5F21FBA1E0C54A10D7E /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2987E770447A34C31BF45397 /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework */; };
+		EF31BB9556B493FA0D55F8D0 /* Pods_Tunes_with_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11850532645D1C478826F288 /* Pods_Tunes_with_FriendsTests.framework */; };
 		FD8A5B55269F6D43000F9F33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B54269F6D43000F9F33 /* AppDelegate.m */; };
 		FD8A5B58269F6D43000F9F33 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B57269F6D43000F9F33 /* SceneDelegate.m */; };
-		FD8A5B5B269F6D43000F9F33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B5A269F6D43000F9F33 /* ViewController.m */; };
 		FD8A5B5E269F6D43000F9F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8A5B5C269F6D43000F9F33 /* Main.storyboard */; };
 		FD8A5B60269F6D43000F9F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8A5B5F269F6D43000F9F33 /* Assets.xcassets */; };
 		FD8A5B63269F6D43000F9F33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8A5B61269F6D43000F9F33 /* LaunchScreen.storyboard */; };
 		FD8A5B66269F6D43000F9F33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B65269F6D43000F9F33 /* main.m */; };
 		FD8A5B70269F6D44000F9F33 /* Tunes_with_FriendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B6F269F6D44000F9F33 /* Tunes_with_FriendsTests.m */; };
 		FD8A5B7B269F6D44000F9F33 /* Tunes_with_FriendsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B7A269F6D44000F9F33 /* Tunes_with_FriendsUITests.m */; };
+		FDAF373A26A3FAA0003558B8 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDAF373926A3FAA0003558B8 /* Keys.plist */; };
+		FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF373D26A40044003558B8 /* ReusableAlert.m */; };
+		FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF374026A4049B003558B8 /* FeedViewController.m */; };
+		FDC36E2126A6083100D3D153 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC36E2026A6083100D3D153 /* ComposeViewController.m */; };
+		FDC36E2726A6550500D3D153 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC36E2626A6550500D3D153 /* TabBarController.m */; };
+		FDC36E2B26A6592C00D3D153 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC36E2A26A6592C00D3D153 /* Post.m */; };
+		FDC36E2D26A6A3CC00D3D153 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FDC36E2C26A6A3CC00D3D153 /* .gitignore */; };
+		FDC36E2F26A6A3FC00D3D153 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = FDC36E2E26A6A3FC00D3D153 /* .gitattributes */; };
+		FDE54AA726A288F90055B200 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE54AA626A288F90055B200 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +47,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11850532645D1C478826F288 /* Pods_Tunes_with_FriendsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunes_with_FriendsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A2B25B498A4DC7BD746BDC /* Pods-Tunes with Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with Friends.release.xcconfig"; path = "Target Support Files/Pods-Tunes with Friends/Pods-Tunes with Friends.release.xcconfig"; sourceTree = "<group>"; };
+		1D94044CC62C4E299FEFA673 /* Pods_Tunes_with_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunes_with_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2987E770447A34C31BF45397 /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		374B64225E43BEFC78FF72BB /* Pods-Tunes with Friends-Tunes with FriendsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with Friends-Tunes with FriendsUITests.release.xcconfig"; path = "Target Support Files/Pods-Tunes with Friends-Tunes with FriendsUITests/Pods-Tunes with Friends-Tunes with FriendsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BDD7E6D79338637ED4725C43 /* Pods-Tunes with Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with Friends.debug.xcconfig"; path = "Target Support Files/Pods-Tunes with Friends/Pods-Tunes with Friends.debug.xcconfig"; sourceTree = "<group>"; };
+		DAA05E90A9ED7B3349EF8DD4 /* Pods-Tunes with FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-Tunes with FriendsTests/Pods-Tunes with FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF7D45E75564525557D0EEB4 /* Pods-Tunes with FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-Tunes with FriendsTests/Pods-Tunes with FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
+		F6AC0E57964AB5570A374788 /* Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tunes with Friends-Tunes with FriendsUITests/Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD8A5B50269F6D42000F9F33 /* Tunes with Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tunes with Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8A5B53269F6D42000F9F33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD8A5B54269F6D43000F9F33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FD8A5B56269F6D43000F9F33 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		FD8A5B57269F6D43000F9F33 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		FD8A5B59269F6D43000F9F33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FD8A5B5A269F6D43000F9F33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FD8A5B5D269F6D43000F9F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD8A5B5F269F6D43000F9F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD8A5B62269F6D43000F9F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +72,21 @@
 		FD8A5B76269F6D44000F9F33 /* Tunes with FriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tunes with FriendsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8A5B7A269F6D44000F9F33 /* Tunes_with_FriendsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tunes_with_FriendsUITests.m; sourceTree = "<group>"; };
 		FD8A5B7C269F6D44000F9F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDAF373926A3FAA0003558B8 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		FDAF373C26A40044003558B8 /* ReusableAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReusableAlert.h; sourceTree = "<group>"; };
+		FDAF373D26A40044003558B8 /* ReusableAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReusableAlert.m; sourceTree = "<group>"; };
+		FDAF373F26A4049B003558B8 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		FDAF374026A4049B003558B8 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		FDC36E1F26A6083100D3D153 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		FDC36E2026A6083100D3D153 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		FDC36E2526A6550500D3D153 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		FDC36E2626A6550500D3D153 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		FDC36E2926A6592C00D3D153 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		FDC36E2A26A6592C00D3D153 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		FDC36E2C26A6A3CC00D3D153 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FDC36E2E26A6A3FC00D3D153 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		FDE54AA526A288F90055B200 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FDE54AA626A288F90055B200 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E88B60C7F9A08457467E6E /* Pods_Tunes_with_Friends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF31BB9556B493FA0D55F8D0 /* Pods_Tunes_with_FriendsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,19 +110,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D3D5F21FBA1E0C54A10D7E /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65357C41CE464B138937A619 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D94044CC62C4E299FEFA673 /* Pods_Tunes_with_Friends.framework */,
+				2987E770447A34C31BF45397 /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework */,
+				11850532645D1C478826F288 /* Pods_Tunes_with_FriendsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D34B8C2EA1FF19D0A9DCC67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDD7E6D79338637ED4725C43 /* Pods-Tunes with Friends.debug.xcconfig */,
+				11A2B25B498A4DC7BD746BDC /* Pods-Tunes with Friends.release.xcconfig */,
+				F6AC0E57964AB5570A374788 /* Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig */,
+				374B64225E43BEFC78FF72BB /* Pods-Tunes with Friends-Tunes with FriendsUITests.release.xcconfig */,
+				DAA05E90A9ED7B3349EF8DD4 /* Pods-Tunes with FriendsTests.debug.xcconfig */,
+				EF7D45E75564525557D0EEB4 /* Pods-Tunes with FriendsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FD8A5B47269F6D42000F9F33 = {
 			isa = PBXGroup;
 			children = (
+				FDC36E2E26A6A3FC00D3D153 /* .gitattributes */,
+				FDC36E2C26A6A3CC00D3D153 /* .gitignore */,
 				FD8A5B52269F6D42000F9F33 /* Tunes with Friends */,
 				FD8A5B6E269F6D44000F9F33 /* Tunes with FriendsTests */,
 				FD8A5B79269F6D44000F9F33 /* Tunes with FriendsUITests */,
 				FD8A5B51269F6D42000F9F33 /* Products */,
+				9D34B8C2EA1FF19D0A9DCC67 /* Pods */,
+				65357C41CE464B138937A619 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,13 +171,15 @@
 				FD8A5B54269F6D43000F9F33 /* AppDelegate.m */,
 				FD8A5B56269F6D43000F9F33 /* SceneDelegate.h */,
 				FD8A5B57269F6D43000F9F33 /* SceneDelegate.m */,
-				FD8A5B59269F6D43000F9F33 /* ViewController.h */,
-				FD8A5B5A269F6D43000F9F33 /* ViewController.m */,
 				FD8A5B5C269F6D43000F9F33 /* Main.storyboard */,
 				FD8A5B5F269F6D43000F9F33 /* Assets.xcassets */,
 				FD8A5B61269F6D43000F9F33 /* LaunchScreen.storyboard */,
 				FD8A5B64269F6D43000F9F33 /* Info.plist */,
+				FDAF373926A3FAA0003558B8 /* Keys.plist */,
 				FD8A5B65269F6D43000F9F33 /* main.m */,
+				FDC36E2826A6591F00D3D153 /* Models */,
+				FDAF373B26A3FFE5003558B8 /* Views */,
+				FDE54AA826A289070055B200 /* View Controllers */,
 			);
 			path = "Tunes with Friends";
 			sourceTree = "<group>";
@@ -137,6 +202,39 @@
 			path = "Tunes with FriendsUITests";
 			sourceTree = "<group>";
 		};
+		FDAF373B26A3FFE5003558B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDAF373C26A40044003558B8 /* ReusableAlert.h */,
+				FDAF373D26A40044003558B8 /* ReusableAlert.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FDC36E2826A6591F00D3D153 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDC36E2926A6592C00D3D153 /* Post.h */,
+				FDC36E2A26A6592C00D3D153 /* Post.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FDE54AA826A289070055B200 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDC36E1F26A6083100D3D153 /* ComposeViewController.h */,
+				FDC36E2026A6083100D3D153 /* ComposeViewController.m */,
+				FDAF373F26A4049B003558B8 /* FeedViewController.h */,
+				FDAF374026A4049B003558B8 /* FeedViewController.m */,
+				FDE54AA526A288F90055B200 /* LoginViewController.h */,
+				FDE54AA626A288F90055B200 /* LoginViewController.m */,
+				FDC36E2526A6550500D3D153 /* TabBarController.h */,
+				FDC36E2626A6550500D3D153 /* TabBarController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD8A5B7F269F6D44000F9F33 /* Build configuration list for PBXNativeTarget "Tunes with Friends" */;
 			buildPhases = (
+				3C4DEEDE2DE402C11FA7F791 /* [CP] Check Pods Manifest.lock */,
 				FD8A5B4C269F6D42000F9F33 /* Sources */,
 				FD8A5B4D269F6D42000F9F33 /* Frameworks */,
 				FD8A5B4E269F6D42000F9F33 /* Resources */,
+				2E751CA14F3B6C68FB0E1B1B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD8A5B82269F6D44000F9F33 /* Build configuration list for PBXNativeTarget "Tunes with FriendsTests" */;
 			buildPhases = (
+				18440C4E27F2429D3E1426F0 /* [CP] Check Pods Manifest.lock */,
 				FD8A5B67269F6D44000F9F33 /* Sources */,
 				FD8A5B68269F6D44000F9F33 /* Frameworks */,
 				FD8A5B69269F6D44000F9F33 /* Resources */,
@@ -179,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD8A5B85269F6D44000F9F33 /* Build configuration list for PBXNativeTarget "Tunes with FriendsUITests" */;
 			buildPhases = (
+				5D924E2C9DDDE4F266AFFD9E /* [CP] Check Pods Manifest.lock */,
 				FD8A5B72269F6D44000F9F33 /* Sources */,
 				FD8A5B73269F6D44000F9F33 /* Frameworks */,
 				FD8A5B74269F6D44000F9F33 /* Resources */,
+				301B5C9A182DC8D68121C024 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +342,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC36E2D26A6A3CC00D3D153 /* .gitignore in Resources */,
+				FDC36E2F26A6A3FC00D3D153 /* .gitattributes in Resources */,
+				FDAF373A26A3FAA0003558B8 /* Keys.plist in Resources */,
 				FD8A5B63269F6D43000F9F33 /* LaunchScreen.storyboard in Resources */,
 				FD8A5B60269F6D43000F9F33 /* Assets.xcassets in Resources */,
 				FD8A5B5E269F6D43000F9F33 /* Main.storyboard in Resources */,
@@ -261,15 +367,123 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18440C4E27F2429D3E1426F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tunes with FriendsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E751CA14F3B6C68FB0E1B1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tunes with Friends/Pods-Tunes with Friends-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tunes with Friends/Pods-Tunes with Friends-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tunes with Friends/Pods-Tunes with Friends-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		301B5C9A182DC8D68121C024 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tunes with Friends-Tunes with FriendsUITests/Pods-Tunes with Friends-Tunes with FriendsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tunes with Friends-Tunes with FriendsUITests/Pods-Tunes with Friends-Tunes with FriendsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tunes with Friends-Tunes with FriendsUITests/Pods-Tunes with Friends-Tunes with FriendsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C4DEEDE2DE402C11FA7F791 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tunes with Friends-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D924E2C9DDDE4F266AFFD9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tunes with Friends-Tunes with FriendsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD8A5B4C269F6D42000F9F33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8A5B5B269F6D43000F9F33 /* ViewController.m in Sources */,
 				FD8A5B55269F6D43000F9F33 /* AppDelegate.m in Sources */,
 				FD8A5B66269F6D43000F9F33 /* main.m in Sources */,
 				FD8A5B58269F6D43000F9F33 /* SceneDelegate.m in Sources */,
+				FDE54AA726A288F90055B200 /* LoginViewController.m in Sources */,
+				FDC36E2B26A6592C00D3D153 /* Post.m in Sources */,
+				FDC36E2126A6083100D3D153 /* ComposeViewController.m in Sources */,
+				FDC36E2726A6550500D3D153 /* TabBarController.m in Sources */,
+				FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */,
+				FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,17 +652,18 @@
 		};
 		FD8A5B80269F6D44000F9F33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDD7E6D79338637ED4725C43 /* Pods-Tunes with Friends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6S3Q5ZTXPA;
+				DEVELOPMENT_TEAM = 74SVDC5L7J;
 				INFOPLIST_FILE = "Tunes with Friends/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattpdl-fbu.Tunes-with-Friends";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattpdl-fbu.twf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -456,17 +671,18 @@
 		};
 		FD8A5B81269F6D44000F9F33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11A2B25B498A4DC7BD746BDC /* Pods-Tunes with Friends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6S3Q5ZTXPA;
+				DEVELOPMENT_TEAM = 74SVDC5L7J;
 				INFOPLIST_FILE = "Tunes with Friends/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattpdl-fbu.Tunes-with-Friends";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattpdl-fbu.twf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,6 +690,7 @@
 		};
 		FD8A5B83269F6D44000F9F33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAA05E90A9ED7B3349EF8DD4 /* Pods-Tunes with FriendsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +711,7 @@
 		};
 		FD8A5B84269F6D44000F9F33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF7D45E75564525557D0EEB4 /* Pods-Tunes with FriendsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -514,6 +732,7 @@
 		};
 		FD8A5B86269F6D44000F9F33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6AC0E57964AB5570A374788 /* Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6S3Q5ZTXPA;
@@ -532,6 +751,7 @@
 		};
 		FD8A5B87269F6D44000F9F33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 374B64225E43BEFC78FF72BB /* Pods-Tunes with Friends-Tunes with FriendsUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6S3Q5ZTXPA;
