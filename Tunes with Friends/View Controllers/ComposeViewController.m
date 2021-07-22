@@ -24,7 +24,8 @@
     [super viewDidLoad];
     self.postTextView.delegate = self;
     
-    [SpotifyAPIWrapper getTopTracks:^(NSDictionary * _Nonnull topSongs, NSError * _Nonnull error) {
+    const NSString* testID = @"3WrFJ7ztbogyGnTHbHJFl2";
+    [SpotifyAPIWrapper getTopTracks:testID completion:^(NSDictionary * _Nonnull topSongs, NSError * _Nonnull error) {
         if (error) {
             NSLog(@"Error: %@", error.localizedDescription);
         }

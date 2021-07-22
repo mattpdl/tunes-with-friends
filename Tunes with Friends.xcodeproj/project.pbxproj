@@ -22,6 +22,7 @@
 		FDAF373A26A3FAA0003558B8 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDAF373926A3FAA0003558B8 /* Keys.plist */; };
 		FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF373D26A40044003558B8 /* ReusableAlert.m */; };
 		FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF374026A4049B003558B8 /* FeedViewController.m */; };
+		FDBE295C26AA0704004CB3C6 /* KeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBE295B26AA0704004CB3C6 /* KeyManager.m */; };
 		FDC36E2126A6083100D3D153 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC36E2026A6083100D3D153 /* ComposeViewController.m */; };
 		FDC36E2726A6550500D3D153 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC36E2626A6550500D3D153 /* TabBarController.m */; };
 		FDC36E2B26A6592C00D3D153 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC36E2A26A6592C00D3D153 /* Post.m */; };
@@ -80,6 +81,8 @@
 		FDAF373D26A40044003558B8 /* ReusableAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReusableAlert.m; sourceTree = "<group>"; };
 		FDAF373F26A4049B003558B8 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		FDAF374026A4049B003558B8 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		FDBE295A26AA0704004CB3C6 /* KeyManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyManager.h; sourceTree = "<group>"; };
+		FDBE295B26AA0704004CB3C6 /* KeyManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyManager.m; sourceTree = "<group>"; };
 		FDC36E1F26A6083100D3D153 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		FDC36E2026A6083100D3D153 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		FDC36E2526A6550500D3D153 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 		FD2C26DF26A8BAB800006A30 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				FDBE295A26AA0704004CB3C6 /* KeyManager.h */,
+				FDBE295B26AA0704004CB3C6 /* KeyManager.m */,
 				FD2C26E026A8BB8900006A30 /* SpotifyAPIWrapper.h */,
 				FD2C26E126A8BB8900006A30 /* SpotifyAPIWrapper.m */,
 			);
@@ -496,6 +501,7 @@
 				FDC36E2126A6083100D3D153 /* ComposeViewController.m in Sources */,
 				FDC36E2726A6550500D3D153 /* TabBarController.m in Sources */,
 				FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */,
+				FDBE295C26AA0704004CB3C6 /* KeyManager.m in Sources */,
 				FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */,
 				FD2C26E226A8BB8900006A30 /* SpotifyAPIWrapper.m in Sources */,
 			);

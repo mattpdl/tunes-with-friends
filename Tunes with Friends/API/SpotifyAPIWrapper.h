@@ -11,7 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SpotifyAPIWrapper : NSObject
 
-+ (void)getTopTracks:(void (^)(NSDictionary *, NSError *))completion;
++ (void)getAccessToken:(void(^)(NSDictionary *, NSError *))completion;
++ (void)getTopTracks:(NSString *)artistID completion:(void (^)(NSDictionary *, NSError *))completion;
 
 @end
 

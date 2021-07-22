@@ -6,6 +6,7 @@
 //
 
 #import "FeedViewController.h"
+#import "SpotifyAPIWrapper.h"
 
 @interface FeedViewController ()
 
@@ -15,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [SpotifyAPIWrapper getAccessToken:^(NSDictionary * _Nonnull response, NSError * _Nonnull error) {
+        
+    }];
 }
 
 /*

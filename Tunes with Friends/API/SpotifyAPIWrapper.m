@@ -6,26 +6,48 @@
 //
 
 #import "SpotifyAPIWrapper.h"
+#import "KeyManager.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 #import <AFNetworking/AFURLSessionManager.h>
 
 const static NSString* baseURL = @"https://api.spotify.com/v1/";
 
 @implementation SpotifyAPIWrapper
 
-+ (void)getTopTracks:(void (^)(NSDictionary *, NSError *))completion {
++ (void)getAccessToken:(void(^)(NSDictionary *, NSError *))completion {
+    NSURL *baseURL = [NSURL URLWithString:@"https://accounts.spotify.com/"];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
+    
+    // Encode client credentials for use in authorization header
+    NSString *clientID = [KeyManager spotifyClientID];
+    NSString *clientSecret = [KeyManager spotifyClientSecret];
+    NSString *credentials = [NSString stringWithFormat:@"%@:%@", clientID, clientSecret];
+    NSString *encodedCredentials = [[credentials dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    NSString *authVal = [@"Basic " stringByAppendingString:encodedCredentials];
+    NSDictionary *authHeader = @{@"Authorization": authVal};
+    
+    // Add parameters and make POST request
+    NSDictionary *params = @{@"grant_type": @"client_credentials"};
+    
+    [manager POST:@"api/token" parameters:params headers:authHeader progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"%@", responseObject);
+            completion(responseObject, nil);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            completion(nil, error);
+        }];
+}
+
++ (void)getTopTracks:(NSString *)artistID completion:(void (^)(NSDictionary *, NSError *))completion {
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:config];
     
-    // Construct endpoint URL (currently hardcoded for the Beatles' top tracks)
-    NSURL *URL = [NSURL URLWithString:[baseURL stringByAppendingString:@"artists/3WrFJ7ztbogyGnTHbHJFl2/top-tracks?market=US"]];
+    // Construct endpoint URL
+    NSURL *URL = [NSURL URLWithString:[baseURL stringByAppendingFormat:@"artists/%@/top-tracks?market=US", artistID]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     
-    // TODO: get access token with API keys
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
-    
     // Add access token to authorization header (currently hardcoded in Keys.plist)
-    NSString *bearerToken = [@"Bearer " stringByAppendingString:dict[@"spotify_access_token"]];
+    NSString *accessToken = [KeyManager spotifyAccessToken];
+    NSString *bearerToken = [@"Bearer " stringByAppendingString:accessToken];
     [request addValue:bearerToken forHTTPHeaderField:@"Authorization"];
     
     NSURLSessionDataTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
