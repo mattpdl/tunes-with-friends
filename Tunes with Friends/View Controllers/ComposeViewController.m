@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import "Post.h"
 #import "ReusableAlert.h"
+#import "SpotifyAPIWrapper.h"
 
 @interface ComposeViewController () <UITextViewDelegate>
 
@@ -22,6 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.postTextView.delegate = self;
+    
+    [SpotifyAPIWrapper getTopTracks:^(NSDictionary * _Nonnull topSongs, NSError * _Nonnull error) {
+        if (error) {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (IBAction)didTapClose:(id)sender {

@@ -6,6 +6,7 @@ target 'Tunes with Friends' do
   use_frameworks!
 
   # Pods for Tunes with Friends
+  pod 'AFNetworking'
   pod 'Parse'
   pod 'Parse/UI'
 

@@ -23,8 +23,8 @@
     // Connect app with Parse database on Back4App
     ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
-        configuration.applicationId = [dict objectForKey:@"app_id"];
-        configuration.clientKey = [dict objectForKey:@"client_key"];
+        configuration.applicationId = [dict objectForKey:@"parse_app_id"];
+        configuration.clientKey = [dict objectForKey:@"parse_client_key"];
         configuration.server = @"https://parseapi.back4app.com";
     }];
     

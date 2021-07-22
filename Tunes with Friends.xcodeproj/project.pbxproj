@@ -10,6 +10,7 @@
 		14E88B60C7F9A08457467E6E /* Pods_Tunes_with_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D94044CC62C4E299FEFA673 /* Pods_Tunes_with_Friends.framework */; };
 		28D3D5F21FBA1E0C54A10D7E /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2987E770447A34C31BF45397 /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework */; };
 		EF31BB9556B493FA0D55F8D0 /* Pods_Tunes_with_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11850532645D1C478826F288 /* Pods_Tunes_with_FriendsTests.framework */; };
+		FD2C26E226A8BB8900006A30 /* SpotifyAPIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2C26E126A8BB8900006A30 /* SpotifyAPIWrapper.m */; };
 		FD8A5B55269F6D43000F9F33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B54269F6D43000F9F33 /* AppDelegate.m */; };
 		FD8A5B58269F6D43000F9F33 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B57269F6D43000F9F33 /* SceneDelegate.m */; };
 		FD8A5B5E269F6D43000F9F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8A5B5C269F6D43000F9F33 /* Main.storyboard */; };
@@ -56,6 +57,8 @@
 		DAA05E90A9ED7B3349EF8DD4 /* Pods-Tunes with FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-Tunes with FriendsTests/Pods-Tunes with FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF7D45E75564525557D0EEB4 /* Pods-Tunes with FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-Tunes with FriendsTests/Pods-Tunes with FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6AC0E57964AB5570A374788 /* Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tunes with Friends-Tunes with FriendsUITests/Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD2C26E026A8BB8900006A30 /* SpotifyAPIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotifyAPIWrapper.h; sourceTree = "<group>"; };
+		FD2C26E126A8BB8900006A30 /* SpotifyAPIWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotifyAPIWrapper.m; sourceTree = "<group>"; };
 		FD8A5B50269F6D42000F9F33 /* Tunes with Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tunes with Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8A5B53269F6D42000F9F33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD8A5B54269F6D43000F9F33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,6 +143,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FD2C26DF26A8BAB800006A30 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FD2C26E026A8BB8900006A30 /* SpotifyAPIWrapper.h */,
+				FD2C26E126A8BB8900006A30 /* SpotifyAPIWrapper.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		FD8A5B47269F6D42000F9F33 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +189,7 @@
 				FD8A5B64269F6D43000F9F33 /* Info.plist */,
 				FDAF373926A3FAA0003558B8 /* Keys.plist */,
 				FD8A5B65269F6D43000F9F33 /* main.m */,
+				FD2C26DF26A8BAB800006A30 /* API */,
 				FDC36E2826A6591F00D3D153 /* Models */,
 				FDAF373B26A3FFE5003558B8 /* Views */,
 				FDE54AA826A289070055B200 /* View Controllers */,
@@ -484,6 +497,7 @@
 				FDC36E2726A6550500D3D153 /* TabBarController.m in Sources */,
 				FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */,
 				FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */,
+				FD2C26E226A8BB8900006A30 /* SpotifyAPIWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
