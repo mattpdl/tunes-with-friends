@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 #import "Post.h"
 #import "ReusableAlert.h"
-#import "SpotifyAPIWrapper.h"
+#import "Track.h"
 
 @interface ComposeViewController () <UITextViewDelegate>
 
@@ -24,19 +24,8 @@
     [super viewDidLoad];
     self.postTextView.delegate = self;
     
-    NSString* testID = @"3WrFJ7ztbogyGnTHbHJFl2";
-    /*[SpotifyAPIWrapper getTopTracks:testID completion:^(NSDictionary * _Nonnull topSongs, NSError * _Nonnull error) {
-        if (error) {
-            NSLog(@"Error: %@", error.localizedDescription);
-        }
-    }];*/
-    
-    testID = @"2EqlS6tkEnglzr7tkKAAYD";
-    [SpotifyAPIWrapper getTrack:testID completion:^(NSDictionary * _Nonnull track, NSError * _Nonnull error) {
-        if (error) {
-            NSLog(@"Error: %@", error.localizedDescription);
-        }
-    }];
+    const NSString *testTrackID = @"2CNNKiZvxEUDaw4G8Sk0rP";
+    Track *testTrack = [[Track alloc] initWithID:testTrackID];
 }
 
 - (IBAction)didTapClose:(id)sender {

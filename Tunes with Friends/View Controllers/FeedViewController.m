@@ -17,9 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [SpotifyAPIWrapper getAccessToken:^(NSDictionary * _Nonnull response, NSError * _Nonnull error) {
-        
-    }];
+    
 }
 
 /*

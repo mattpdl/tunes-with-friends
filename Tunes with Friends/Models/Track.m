@@ -6,11 +6,44 @@
 //
 
 #import "Track.h"
+#import "SpotifyAPIWrapper.h"
 
 @implementation Track
 
-- (void)initWithID:(NSString *)spotifyID {
+- (instancetype)initWithID:(NSString *)trackID {
     
+    self = [super init];
+    
+    [SpotifyAPIWrapper getTrack:trackID completion:^(NSDictionary * _Nonnull track, NSError * _Nonnull error) {
+        
+        if (error) {
+            NSLog(@"Failed to fetch track with given ID");
+        }
+        
+        else {
+            // Store track id and title
+            self.id = trackID;
+            self.title = track[@"name"];
+            
+            // Store name of first artist listed
+            NSArray *artists = track[@"artists"];
+            NSDictionary *primaryArtist = artists[0];
+            self.artist = primaryArtist[@"name"];
+            
+            // Store name and cover art of the track's album
+            NSDictionary *album = track[@"album"];
+            NSArray *images = album[@"images"];
+            NSDictionary *coverArt = images[0];
+            
+            self.album = album[@"name"];
+            self.coverArt = coverArt[@"url"];
+            
+            // Store URL of 30 second audio sample
+            self.audioSample = track[@"preview_url"];
+        }
+    }];
+    
+    return self;
 }
 
 @end
