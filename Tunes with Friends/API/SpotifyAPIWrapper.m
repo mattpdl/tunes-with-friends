@@ -14,7 +14,7 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
 
 @implementation SpotifyAPIWrapper
 
-+ (void)getAccessToken:(void(^)(NSDictionary *, NSError *))completion {
++ (void)getAccessToken:(void (^)(NSDictionary *, NSError *))completion {
     NSURL *baseURL = [NSURL URLWithString:@"https://accounts.spotify.com/"];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
     
