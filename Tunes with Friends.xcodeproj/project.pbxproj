@@ -11,7 +11,8 @@
 		28D3D5F21FBA1E0C54A10D7E /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2987E770447A34C31BF45397 /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework */; };
 		EF31BB9556B493FA0D55F8D0 /* Pods_Tunes_with_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11850532645D1C478826F288 /* Pods_Tunes_with_FriendsTests.framework */; };
 		FD269B4526AF52B80020D0F4 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = FD269B4426AF52B80020D0F4 /* Track.m */; };
-		FD2C26E226A8BB8900006A30 /* SpotifyAPIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2C26E126A8BB8900006A30 /* SpotifyAPIWrapper.m */; };
+		FD2C26E226A8BB8900006A30 /* SpotifyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2C26E126A8BB8900006A30 /* SpotifyAPI.m */; };
+		FD2D0A4A26B142C7001BF292 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D0A4926B142C7001BF292 /* Artist.m */; };
 		FD8A5B55269F6D43000F9F33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B54269F6D43000F9F33 /* AppDelegate.m */; };
 		FD8A5B58269F6D43000F9F33 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B57269F6D43000F9F33 /* SceneDelegate.m */; };
 		FD8A5B5E269F6D43000F9F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8A5B5C269F6D43000F9F33 /* Main.storyboard */; };
@@ -61,8 +62,10 @@
 		F6AC0E57964AB5570A374788 /* Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tunes with Friends-Tunes with FriendsUITests/Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD269B4326AF52B80020D0F4 /* Track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		FD269B4426AF52B80020D0F4 /* Track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
-		FD2C26E026A8BB8900006A30 /* SpotifyAPIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotifyAPIWrapper.h; sourceTree = "<group>"; };
-		FD2C26E126A8BB8900006A30 /* SpotifyAPIWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotifyAPIWrapper.m; sourceTree = "<group>"; };
+		FD2C26E026A8BB8900006A30 /* SpotifyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotifyAPI.h; sourceTree = "<group>"; };
+		FD2C26E126A8BB8900006A30 /* SpotifyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotifyAPI.m; sourceTree = "<group>"; };
+		FD2D0A4826B142C7001BF292 /* Artist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
+		FD2D0A4926B142C7001BF292 /* Artist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
 		FD8A5B50269F6D42000F9F33 /* Tunes with Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tunes with Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8A5B53269F6D42000F9F33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD8A5B54269F6D43000F9F33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,8 +157,8 @@
 			children = (
 				FDBE295A26AA0704004CB3C6 /* KeyManager.h */,
 				FDBE295B26AA0704004CB3C6 /* KeyManager.m */,
-				FD2C26E026A8BB8900006A30 /* SpotifyAPIWrapper.h */,
-				FD2C26E126A8BB8900006A30 /* SpotifyAPIWrapper.m */,
+				FD2C26E026A8BB8900006A30 /* SpotifyAPI.h */,
+				FD2C26E126A8BB8900006A30 /* SpotifyAPI.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -194,8 +197,8 @@
 				FD8A5B5C269F6D43000F9F33 /* Main.storyboard */,
 				FD8A5B5F269F6D43000F9F33 /* Assets.xcassets */,
 				FD8A5B61269F6D43000F9F33 /* LaunchScreen.storyboard */,
-				FD8A5B64269F6D43000F9F33 /* Info.plist */,
 				FDAF373926A3FAA0003558B8 /* Keys.plist */,
+				FD8A5B64269F6D43000F9F33 /* Info.plist */,
 				FD8A5B65269F6D43000F9F33 /* main.m */,
 				FD2C26DF26A8BAB800006A30 /* API */,
 				FDC36E2826A6591F00D3D153 /* Models */,
@@ -235,6 +238,8 @@
 		FDC36E2826A6591F00D3D153 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD2D0A4826B142C7001BF292 /* Artist.h */,
+				FD2D0A4926B142C7001BF292 /* Artist.m */,
 				FDC36E2926A6592C00D3D153 /* Post.h */,
 				FDC36E2A26A6592C00D3D153 /* Post.m */,
 				FD269B4326AF52B80020D0F4 /* Track.h */,
@@ -508,8 +513,9 @@
 				FDC36E2726A6550500D3D153 /* TabBarController.m in Sources */,
 				FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */,
 				FDBE295C26AA0704004CB3C6 /* KeyManager.m in Sources */,
+				FD2D0A4A26B142C7001BF292 /* Artist.m in Sources */,
 				FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */,
-				FD2C26E226A8BB8900006A30 /* SpotifyAPIWrapper.m in Sources */,
+				FD2C26E226A8BB8900006A30 /* SpotifyAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

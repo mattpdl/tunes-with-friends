@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSURL *coverArt;
 @property (nonatomic, strong) NSURL *audioSample;
 
-- (instancetype)initWithID:(NSString *)trackID;
+- (instancetype)initWithDictionary:(NSDictionary *)track;
 
 @end
 

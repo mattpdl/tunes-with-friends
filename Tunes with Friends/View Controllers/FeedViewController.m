@@ -7,7 +7,7 @@
 
 #import "FeedViewController.h"
 #import <Parse/Parse.h>
-#import "SpotifyAPIWrapper.h"
+#import "SpotifyAPI.h"
 #import "SceneDelegate.h"
 
 @interface FeedViewController ()

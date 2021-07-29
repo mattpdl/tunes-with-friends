@@ -6,7 +6,7 @@
 //
 
 #import "Track.h"
-#import "SpotifyAPIWrapper.h"
+#import "SpotifyAPI.h"
 
 @implementation Track
 
@@ -35,28 +35,6 @@
     self.audioSample = track[@"preview_url"];
     
     return self;
-}
-
-- (instancetype)initWithID:(NSString *)trackID {
-    
-    __block NSDictionary *track = nil;
-    
-    // Fetch track object with given ID from Spotify API
-    [SpotifyAPIWrapper getTrack:trackID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
-        
-        if (error) {
-            NSLog(@"Failed to fetch track with given ID");
-        } else {
-            track = responseObject;
-        }
-    }];
-    
-    // Call initWithDictionary on track object, or return nil if track not found
-    if (track) {
-        return [self initWithDictionary:track];
-    } else {
-        return nil;
-    }
 }
 
 @end

@@ -5,14 +5,15 @@
 //  Created by mattpdl on 7/21/21.
 //
 
-#import "SpotifyAPIWrapper.h"
+#import "SpotifyAPI.h"
 #import "KeyManager.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <AFNetworking/AFURLSessionManager.h>
+#import "Track.h"
 
 const static NSString* baseURLString = @"https://api.spotify.com/v1/";
 
-@implementation SpotifyAPIWrapper
+@implementation SpotifyAPI
 
 + (void)getAccessToken:(void (^)(NSDictionary *, NSError *))completion {
     NSURL *baseURL = [NSURL URLWithString:@"https://accounts.spotify.com/"];
@@ -37,16 +38,29 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
         }];
 }
 
++ (void)getArtist:(NSString *)artistID completion:(void (^)(NSDictionary *, NSError *))completion {
+    NSURL *baseURL = [NSURL URLWithString:baseURLString];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
+    
+    // Construct endpoint URL and make API call
+    NSString *endpoint = [NSString stringWithFormat:@"artists/%@", artistID];
+    
+    [manager GET:endpoint parameters:nil headers:[self authHeader] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"%@", responseObject);
+            completion(responseObject, nil);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            completion(nil, error);
+        }];
+}
+
 + (void)getTrack:(NSString *)trackID completion:(void (^)(NSDictionary *, NSError *))completion {
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
     
-    // Construct authorization header and API endpoint
-    NSString *bearerToken = [@"Bearer " stringByAppendingString:[KeyManager spotifyAccessToken]];
-    NSDictionary *authHeader = @{@"Authorization": bearerToken};
+    // Construct endpoint URL and make API call
     NSString *endpoint = [NSString stringWithFormat:@"tracks/%@?market=US", trackID];
     
-    [manager GET:endpoint parameters:nil headers:authHeader progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:endpoint parameters:nil headers:[self authHeader] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"%@", responseObject);
             completion(responseObject, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -55,7 +69,7 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
 }
 
 + (void)getTopTracks:(NSString *)artistID completion:(void (^)(NSDictionary *, NSError *))completion {
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    /*NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:config];
     
     // Construct endpoint URL
@@ -77,7 +91,33 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
         }
     }];
     
-    [task resume];
+    [task resume];*/
+    
+    NSURL *baseURL = [NSURL URLWithString:baseURLString];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
+    
+    // Construct endpoint URL and make API call
+    NSString *endpoint = [NSString stringWithFormat:@"artists/%@/top-tracks?market=US", artistID];
+    
+    [manager GET:endpoint parameters:nil headers:[self authHeader] progress:nil
+        success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"%@", responseObject);
+            completion(responseObject, nil);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            completion(nil, error);
+        }];
+}
+
++ (void)searchTracks:(NSString *)query completion:(void (^)(NSDictionary *, NSError *))completion {
+    NSURL *baseURL = [NSURL URLWithString:baseURLString];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
+    
+    // TODO: add endpoint parameters and make API call
+}
+
++ (NSDictionary *)authHeader {
+    NSString *bearerToken = [@"Bearer " stringByAppendingString:[KeyManager spotifyAccessToken]];
+    return @{@"Authorization": bearerToken};
 }
 
 @end
