@@ -9,8 +9,6 @@
 #import <Parse/Parse.h>
 #import "Post.h"
 #import "ReusableAlert.h"
-#import "SpotifyAPI.h"
-#import "Track.h"
 
 @interface ComposeViewController () <UITextViewDelegate>
 
@@ -24,22 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.postTextView.delegate = self;
-    
-    const NSString *testTrackID = @"2CNNKiZvxEUDaw4G8Sk0rP";
-    __block Track *testTrack;
-    
-    [SpotifyAPI getTrack:testTrackID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
-            
-        if (error) {
-            NSLog(@"Error: %@", error.localizedDescription);
-        } else {
-            testTrack = [[Track alloc] initWithDictionary:responseObject];
-        }
-    }];
-}
-
-- (IBAction)didTapClose:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapPost:(id)sender {

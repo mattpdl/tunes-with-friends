@@ -69,30 +69,6 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
 }
 
 + (void)getTopTracks:(NSString *)artistID completion:(void (^)(NSDictionary *, NSError *))completion {
-    /*NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:config];
-    
-    // Construct endpoint URL
-    NSURL *URL = [NSURL URLWithString:[baseURLString stringByAppendingFormat:@"artists/%@/top-tracks?market=US", artistID]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
-    
-    // Add access token to authorization header (currently hardcoded in Keys.plist)
-    NSString *accessToken = [KeyManager spotifyAccessToken];
-    NSString *bearerToken = [@"Bearer " stringByAppendingString:accessToken];
-    [request addValue:bearerToken forHTTPHeaderField:@"Authorization"];
-    
-    NSURLSessionDataTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        if (error) {
-            completion(nil, error);
-        } else {
-            NSLog(@"%@", responseObject);
-            NSDictionary *topSongs = responseObject;
-            completion(topSongs, nil);
-        }
-    }];
-    
-    [task resume];*/
-    
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
     
@@ -101,7 +77,7 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
     
     [manager GET:endpoint parameters:nil headers:[self authHeader] progress:nil
         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"%@", responseObject);
+            NSLog(@"Fetched top tracks for artist with ID '%@'", artistID);
             completion(responseObject, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             completion(nil, error);

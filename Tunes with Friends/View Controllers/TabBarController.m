@@ -24,8 +24,8 @@
     if ([viewController.title isEqualToString:@"New Post Placeholder"]) {
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *composeVC = [storyboard instantiateViewControllerWithIdentifier:@"ComposeViewController"];
-        [self presentViewController:composeVC animated:YES completion:nil];
+        UIViewController *trackSelectVC = [storyboard instantiateViewControllerWithIdentifier:@"TrackSelectViewController"];
+        [self presentViewController:trackSelectVC animated:YES completion:nil];
         
         return NO;
     }

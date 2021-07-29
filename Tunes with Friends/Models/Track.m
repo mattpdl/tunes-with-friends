@@ -26,13 +26,13 @@
     // Store name and cover art of the track's album
     NSDictionary *album = track[@"album"];
     NSArray *images = album[@"images"];
-    NSDictionary *coverArt = images[0];
+    NSDictionary *coverArt = images[2];
     
     self.album = album[@"name"];
-    self.coverArt = coverArt[@"url"];
+    self.coverArt = [NSURL URLWithString:coverArt[@"url"]];
     
     // Store URL of 30 second audio sample
-    self.audioSample = track[@"preview_url"];
+    self.audioSample = (track[@"preview_url"] != [NSNull null]) ? [NSURL URLWithString:track[@"preview_url"]] : nil;
     
     return self;
 }
