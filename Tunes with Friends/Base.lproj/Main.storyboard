@@ -242,6 +242,7 @@
                                             <outlet property="coverArtView" destination="zLK-nz-QzZ" id="Tj8-Hq-zkb"/>
                                             <outlet property="playButton" destination="9Ii-4o-yOl" id="MTT-UV-9qC"/>
                                             <outlet property="titleLabel" destination="oEc-Uc-ui5" id="nJs-Pk-mEB"/>
+                                            <segue destination="DPi-2Y-daF" kind="show" id="iPB-GF-HAh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -265,7 +266,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tracksView" destination="rUb-QZ-aH2" id="buQ-hu-dQb"/>
-                        <segue destination="DPi-2Y-daF" kind="show" identifier="ComposeSegue" id="pKP-f0-KcM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rC-qY-eIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

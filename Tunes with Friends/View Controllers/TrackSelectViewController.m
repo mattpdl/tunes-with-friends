@@ -6,6 +6,7 @@
 //
 
 #import "TrackSelectViewController.h"
+#import "ComposeViewController.h"
 #import "SpotifyAPI.h"
 #import "Track.h"
 #import "TrackCell.h"
@@ -14,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tracksView;
 
-@property (strong, nonatomic) Track *selectedTrack;
 @property (strong, nonatomic) NSMutableArray *topTracks;
 
 @end
@@ -49,15 +49,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Pass selected track to compose view controller
+    UITableViewCell *selectedCell = sender;
+    NSIndexPath *indexPath = [self.tracksView indexPathForCell:selectedCell];
+    Track *selectedTrack = self.topTracks[indexPath.row];
+    
+    ComposeViewController *composeVC = [segue destinationViewController];
+    composeVC.selectedTrack = selectedTrack;
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -74,11 +79,6 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.topTracks.count;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Set selected track property before segue
-    self.selectedTrack = self.topTracks[indexPath.row];
 }
 
 @end
