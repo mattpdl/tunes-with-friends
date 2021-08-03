@@ -21,9 +21,9 @@
     // Configure the view for the selected state
 }
 
-- (void)updateWithTrack:(Track *)track {
+- (void)updateCell {
     // Update cover art image
-    NSURLRequest *coverArtRequest = [NSURLRequest requestWithURL:track.coverArt];
+    NSURLRequest *coverArtRequest = [NSURLRequest requestWithURL:self.track.coverArt];
     
     [self.coverArtView setImageWithURLRequest:coverArtRequest placeholderImage:nil success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
         
@@ -44,16 +44,12 @@
         
         } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
             
-            NSLog(@"Failed to load cover art for '%@'", track.title);
+            NSLog(@"Failed to load cover art for '%@'", self.track.title);
         }];
     
     // Update title, artist, and album labels
-    self.titleLabel.text = track.title;
-    self.artistAlbumLabel.text = [NSString stringWithFormat:@"%@ · %@", track.artist, track.album];
-}
-
-- (IBAction)didTapSelect:(id)sender {
-    
+    self.titleLabel.text = self.track.title;
+    self.artistAlbumLabel.text = [NSString stringWithFormat:@"%@ · %@", self.track.artist, self.track.album];
 }
 
 @end

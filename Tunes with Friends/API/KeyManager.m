@@ -15,7 +15,8 @@
 }
 
 + (NSString *)spotifyAccessToken {
-    return [[self keyDict] valueForKey:@"spotify_access_token"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults valueForKey:@"spotify_access_token"];
 }
 
 + (NSString *)spotifyClientID {

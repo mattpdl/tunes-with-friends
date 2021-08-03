@@ -19,7 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    // Request access token from Spotify and store in NSUserDefaults
+    [SpotifyAPI getAccessToken:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
+        if (error) {
+            NSLog(@"Error: %@", error.localizedDescription);
+        } else {
+            NSString *accessToken = responseObject[@"access_token"];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setValue:accessToken forKey:@"spotify_access_token"];
+        }
+    }];
 }
 
 - (IBAction)didTapSettings:(id)sender {

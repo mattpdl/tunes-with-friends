@@ -12,13 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TrackCell : UITableViewCell
 
+// UI properties
 @property (weak, nonatomic) IBOutlet UIImageView *coverArtView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistAlbumLabel;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
-@property (weak, nonatomic) IBOutlet UIButton *selectButton;
 
-- (void)updateWithTrack:(Track *)track;
+// Track object
+@property (strong, nonatomic) Track *track;
+
+- (void)updateCell;
 
 @end
 

@@ -7,12 +7,14 @@
 
 #import "TrackSelectViewController.h"
 #import "SpotifyAPI.h"
+#import "Track.h"
 #import "TrackCell.h"
 
 @interface TrackSelectViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tracksView;
 
+@property (strong, nonatomic) Track *selectedTrack;
 @property (strong, nonatomic) NSMutableArray *topTracks;
 
 @end
@@ -61,8 +63,10 @@
     
     TrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell" forIndexPath:indexPath];
     
-    if (self.topTracks.count > indexPath.row) {
-        [cell updateWithTrack:self.topTracks[indexPath.row]];
+    // Update cell only when new tracks fetched
+    if (cell.track != self.topTracks[indexPath.row]) {
+        cell.track = self.topTracks[indexPath.row];
+        [cell updateCell];
     }
     
     return cell;
@@ -70,6 +74,11 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.topTracks.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Set selected track property before segue
+    self.selectedTrack = self.topTracks[indexPath.row];
 }
 
 @end

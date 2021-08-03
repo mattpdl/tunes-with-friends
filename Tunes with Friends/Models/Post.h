@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) PFUser *author;
 
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *trackID;
 @property (nonatomic, strong) NSNumber *numLikes;
 @property (nonatomic, strong) NSNumber *numComments;
 

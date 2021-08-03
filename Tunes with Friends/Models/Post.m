@@ -13,6 +13,7 @@
 @dynamic userID;
 @dynamic author;
 @dynamic text;
+@dynamic trackID;
 @dynamic numLikes;
 @dynamic numComments;
 

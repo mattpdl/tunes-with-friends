@@ -175,7 +175,7 @@
             </objects>
             <point key="canvasLocation" x="38" y="1546"/>
         </scene>
-        <!--Track Select View Controller-->
+        <!--Select a song-->
         <scene sceneID="m1P-8v-00l">
             <objects>
                 <viewController id="a0T-dt-FlZ" customClass="TrackSelectViewController" sceneMemberID="viewController">
@@ -214,7 +214,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ii-4o-yOl">
-                                                    <rect key="frame" x="311" y="21" width="40" height="39"/>
+                                                    <rect key="frame" x="364" y="21" width="40" height="39"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="ZMg-VG-KSW"/>
                                                         <constraint firstAttribute="height" constant="40" id="nnv-HI-Idy"/>
@@ -222,42 +222,25 @@
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                                     <state key="normal" backgroundImage="play.circle" catalog="system"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1z-Yj-ag9">
-                                                    <rect key="frame" x="359" y="21" width="40" height="39"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="OTV-Jx-ZTM"/>
-                                                        <constraint firstAttribute="height" constant="40" id="d2P-VN-Ut0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                                                    <state key="normal" backgroundImage="checkmark.circle" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="didTapSelect:" destination="UgH-Ud-9Xu" eventType="touchUpInside" id="qLU-en-sh5"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="9Ii-4o-yOl" secondAttribute="trailing" constant="10" id="0c3-Bs-eDD"/>
                                                 <constraint firstAttribute="bottom" secondItem="zLK-nz-QzZ" secondAttribute="bottom" constant="10" id="59f-ae-hAO"/>
                                                 <constraint firstItem="zLK-nz-QzZ" firstAttribute="leading" secondItem="Lmv-8L-Bce" secondAttribute="leading" constant="15" id="Bav-e7-n4c"/>
-                                                <constraint firstAttribute="trailing" secondItem="h1z-Yj-ag9" secondAttribute="trailing" constant="15" id="HQ4-Yx-hJX"/>
                                                 <constraint firstItem="9Ii-4o-yOl" firstAttribute="centerY" secondItem="Lmv-8L-Bce" secondAttribute="centerY" id="IMF-94-eSD"/>
-                                                <constraint firstItem="h1z-Yj-ag9" firstAttribute="leading" secondItem="9Ii-4o-yOl" secondAttribute="trailing" constant="8" id="MES-Ae-mwX"/>
                                                 <constraint firstItem="zLK-nz-QzZ" firstAttribute="top" secondItem="Lmv-8L-Bce" secondAttribute="top" constant="10" id="SzE-u6-3bb"/>
                                                 <constraint firstItem="4Jv-V3-3Oa" firstAttribute="leading" secondItem="oEc-Uc-ui5" secondAttribute="leading" id="b6Y-yv-P5u"/>
                                                 <constraint firstItem="9Ii-4o-yOl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oEc-Uc-ui5" secondAttribute="trailing" constant="8" id="bou-8d-plx"/>
                                                 <constraint firstItem="oEc-Uc-ui5" firstAttribute="bottom" secondItem="zLK-nz-QzZ" secondAttribute="centerY" constant="-4" id="euC-u8-T6d"/>
                                                 <constraint firstItem="4Jv-V3-3Oa" firstAttribute="top" secondItem="zLK-nz-QzZ" secondAttribute="centerY" constant="4" id="jYT-QX-mYd"/>
-                                                <constraint firstItem="h1z-Yj-ag9" firstAttribute="leading" secondItem="9Ii-4o-yOl" secondAttribute="trailing" constant="8" symbolic="YES" id="mLz-hF-F6M"/>
                                                 <constraint firstItem="oEc-Uc-ui5" firstAttribute="leading" secondItem="zLK-nz-QzZ" secondAttribute="trailing" constant="8" id="n4f-cU-J7N"/>
-                                                <constraint firstItem="h1z-Yj-ag9" firstAttribute="leading" secondItem="9Ii-4o-yOl" secondAttribute="trailing" constant="8" id="p0Y-gS-pum"/>
                                                 <constraint firstItem="9Ii-4o-yOl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Jv-V3-3Oa" secondAttribute="trailing" constant="8" id="sN7-xW-fda"/>
-                                                <constraint firstItem="h1z-Yj-ag9" firstAttribute="centerY" secondItem="Lmv-8L-Bce" secondAttribute="centerY" id="vtK-5b-0Vi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="artistAlbumLabel" destination="4Jv-V3-3Oa" id="Mb8-cW-ajB"/>
                                             <outlet property="coverArtView" destination="zLK-nz-QzZ" id="Tj8-Hq-zkb"/>
                                             <outlet property="playButton" destination="9Ii-4o-yOl" id="MTT-UV-9qC"/>
-                                            <outlet property="selectButton" destination="h1z-Yj-ag9" id="KTv-ej-sNc"/>
                                             <outlet property="titleLabel" destination="oEc-Uc-ui5" id="nJs-Pk-mEB"/>
                                         </connections>
                                     </tableViewCell>
@@ -273,7 +256,7 @@
                             <constraint firstItem="rUb-QZ-aH2" firstAttribute="top" secondItem="0dG-UT-lvf" secondAttribute="top" id="obC-hD-PeZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QUI-hn-FVf">
+                    <navigationItem key="navigationItem" title="Select a song" id="QUI-hn-FVf">
                         <barButtonItem key="leftBarButtonItem" title="Close" image="xmark" catalog="system" id="VBG-bK-YPR">
                             <connections>
                                 <action selector="didTapClose:" destination="a0T-dt-FlZ" id="euq-gs-q0U"/>
@@ -362,7 +345,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="music.note.house" catalog="system" width="128" height="106"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
