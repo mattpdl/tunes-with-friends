@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *numLikes;
 @property (nonatomic, strong) NSNumber *numComments;
 
-+ (void) postSong:(NSString * _Nullable)text withCompletion: (PFBooleanResultBlock _Nullable)completion;
++ (void) postSong:(NSString * _Nullable)trackID withText:(NSString * _Nullable)text completion: (PFBooleanResultBlock _Nullable)completion;
 
 @end
 

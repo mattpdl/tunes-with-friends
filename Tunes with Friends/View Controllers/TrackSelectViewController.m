@@ -58,9 +58,10 @@
     UITableViewCell *selectedCell = sender;
     NSIndexPath *indexPath = [self.tracksView indexPathForCell:selectedCell];
     Track *selectedTrack = self.topTracks[indexPath.row];
+    NSString *selectedTrackID = selectedTrack.id;
     
     ComposeViewController *composeVC = [segue destinationViewController];
-    composeVC.selectedTrack = selectedTrack;
+    composeVC.selectedTrackID = selectedTrackID;
 }
 
 

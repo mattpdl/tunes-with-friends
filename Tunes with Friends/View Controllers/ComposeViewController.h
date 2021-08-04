@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ComposeViewController : UIViewController
 
-@property (strong, nonatomic) Track *selectedTrack;
+@property (strong, nonatomic) NSString *selectedTrackID;
 
 @end
 

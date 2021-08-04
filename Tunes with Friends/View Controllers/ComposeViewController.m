@@ -26,9 +26,9 @@
 
 - (IBAction)didTapPost:(id)sender {
     // Save post in backend
-    [Post postSong:self.postTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Post postSong:self.selectedTrackID withText:self.postTextView.text completion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
-            NSLog(@"%@ posted: %@", [PFUser currentUser].username, self.postTextView.text);
+            NSLog(@"%@ posted song ID %@ with text: %@", [PFUser currentUser].username, self.selectedTrackID, self.postTextView.text);
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"Error: %@", error.localizedDescription);

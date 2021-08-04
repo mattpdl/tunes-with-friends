@@ -21,9 +21,10 @@
     return @"Post";
 }
 
-+ (void) postSong:(NSString * _Nullable)text withCompletion: (PFBooleanResultBlock _Nullable)completion {
++ (void) postSong:(NSString * _Nullable)trackID withText:(NSString * _Nullable)text completion: (PFBooleanResultBlock _Nullable)completion {
     Post *newPost = [Post new];
     newPost.text = text;
+    newPost.trackID = trackID;
     newPost.numLikes = @(0);
     newPost.numComments = @(0);
     
