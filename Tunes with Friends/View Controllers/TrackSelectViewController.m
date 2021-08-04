@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tracksView;
 
-@property (strong, nonatomic) NSMutableArray *topTracks;
+@property (strong, nonatomic) NSMutableArray<Track *> *topTracks;
 
 @end
 

@@ -7,12 +7,16 @@
 
 #import "FeedViewController.h"
 #import <Parse/Parse.h>
+#import "Post.h"
 #import "SpotifyAPI.h"
 #import "SceneDelegate.h"
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *feedView;
+
+@property (strong, nonatomic) NSArray<Post *> *posts;
 
 @end
 
@@ -25,16 +29,8 @@
     self.feedView.dataSource = self;
     self.feedView.delegate = self;
     
-    // Request access token from Spotify and store in NSUserDefaults
-    [SpotifyAPI getAccessToken:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
-        if (error) {
-            NSLog(@"Error: %@", error.localizedDescription);
-        } else {
-            NSString *accessToken = responseObject[@"access_token"];
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setValue:accessToken forKey:@"spotify_access_token"];
-        }
-    }];
+    // Fetch posts from Parse database
+    [self fetchPosts];
 }
 
 - (IBAction)didTapSettings:(id)sender {
@@ -51,6 +47,29 @@
     }]];
     
     [self presentViewController:settingsSheet animated:YES completion:nil];
+}
+
+- (void)fetchPosts {
+    // Animate activity indicator
+    [self.activityIndicator startAnimating];
+    
+    // Construct PFQuery
+    PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    
+    // Query database
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            NSLog(@"%@", posts);
+            self.posts = posts;
+            [self.feedView reloadData];
+            [self.activityIndicator stopAnimating];
+        } else {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (void)logoutUser {
@@ -91,7 +110,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.posts.count;
 }
 
 @end

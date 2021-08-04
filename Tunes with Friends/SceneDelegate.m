@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
+#import "SpotifyAPI.h"
 
 @interface SceneDelegate ()
 
@@ -21,8 +22,19 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     if (PFUser.currentUser) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        // Request access token from Spotify and store in NSUserDefaults
+        [SpotifyAPI getAccessToken:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
+            if (error) {
+                NSLog(@"Error: %@", error.localizedDescription);
+            } else {
+                NSString *accessToken = responseObject[@"access_token"];
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setValue:accessToken forKey:@"spotify_access_token"];
+            }
+        }];
         
+        // Instantiate with feed view controller
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
     }
 }
