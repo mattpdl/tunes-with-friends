@@ -10,6 +10,7 @@
 		14E88B60C7F9A08457467E6E /* Pods_Tunes_with_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D94044CC62C4E299FEFA673 /* Pods_Tunes_with_Friends.framework */; };
 		28D3D5F21FBA1E0C54A10D7E /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2987E770447A34C31BF45397 /* Pods_Tunes_with_Friends_Tunes_with_FriendsUITests.framework */; };
 		EF31BB9556B493FA0D55F8D0 /* Pods_Tunes_with_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11850532645D1C478826F288 /* Pods_Tunes_with_FriendsTests.framework */; };
+		FD0655BE26BA348000DCB162 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0655BD26BA348000DCB162 /* PostCell.m */; };
 		FD269B4526AF52B80020D0F4 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = FD269B4426AF52B80020D0F4 /* Track.m */; };
 		FD2C26E226A8BB8900006A30 /* SpotifyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2C26E126A8BB8900006A30 /* SpotifyAPI.m */; };
 		FD2D0A4A26B142C7001BF292 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D0A4926B142C7001BF292 /* Artist.m */; };
@@ -62,6 +63,8 @@
 		DAA05E90A9ED7B3349EF8DD4 /* Pods-Tunes with FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-Tunes with FriendsTests/Pods-Tunes with FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF7D45E75564525557D0EEB4 /* Pods-Tunes with FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-Tunes with FriendsTests/Pods-Tunes with FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6AC0E57964AB5570A374788 /* Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tunes with Friends-Tunes with FriendsUITests/Pods-Tunes with Friends-Tunes with FriendsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD0655BC26BA348000DCB162 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		FD0655BD26BA348000DCB162 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		FD269B4326AF52B80020D0F4 /* Track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		FD269B4426AF52B80020D0F4 /* Track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		FD2C26E026A8BB8900006A30 /* SpotifyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotifyAPI.h; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				FDAF373D26A40044003558B8 /* ReusableAlert.m */,
 				FD9A576F26B278A6000DFC6D /* TrackCell.h */,
 				FD9A577026B278A6000DFC6D /* TrackCell.m */,
+				FD0655BC26BA348000DCB162 /* PostCell.h */,
+				FD0655BD26BA348000DCB162 /* PostCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 				FD9A577126B278A6000DFC6D /* TrackCell.m in Sources */,
 				FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */,
 				FDBE295C26AA0704004CB3C6 /* KeyManager.m in Sources */,
+				FD0655BE26BA348000DCB162 /* PostCell.m in Sources */,
 				FD2D0A4A26B142C7001BF292 /* Artist.m in Sources */,
 				FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */,
 				FD2C26E226A8BB8900006A30 /* SpotifyAPI.m in Sources */,

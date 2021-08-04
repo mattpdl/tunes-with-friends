@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.postTextView.delegate = self;
+    [self.postTextView becomeFirstResponder];
 }
 
 - (IBAction)didTapPost:(id)sender {

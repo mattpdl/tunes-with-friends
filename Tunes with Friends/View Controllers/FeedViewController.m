@@ -10,7 +10,9 @@
 #import "SpotifyAPI.h"
 #import "SceneDelegate.h"
 
-@interface FeedViewController ()
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *feedView;
 
 @end
 
@@ -18,6 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Set data source and delegate for table view
+    self.feedView.dataSource = self;
+    self.feedView.delegate = self;
     
     // Request access token from Spotify and store in NSUserDefaults
     [SpotifyAPI getAccessToken:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
@@ -77,5 +83,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
 
 @end
