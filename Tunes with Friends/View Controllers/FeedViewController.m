@@ -51,6 +51,7 @@
 
 - (void)fetchPosts {
     // Animate activity indicator
+    [self.feedView setHidden:YES];
     [self.activityIndicator startAnimating];
     
     // Construct PFQuery
@@ -66,6 +67,7 @@
             self.posts = posts;
             [self.feedView reloadData];
             [self.activityIndicator stopAnimating];
+            [self.feedView setHidden:NO];
         } else {
             NSLog(@"Error: %@", error.localizedDescription);
         }
