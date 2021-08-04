@@ -30,8 +30,17 @@
     self.feedView.dataSource = self;
     self.feedView.delegate = self;
     
+    // Add UIRefreshControl
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(fetchPosts:) forControlEvents:UIControlEventValueChanged];
+    [self.feedView insertSubview:refreshControl atIndex:0];
+    
+    // Animate activity indicator
+    [self.feedView setHidden:YES];
+    [self.activityIndicator startAnimating];
+    
     // Fetch posts from Parse database
-    [self fetchPosts];
+    [self fetchPosts:refreshControl];
 }
 
 - (IBAction)didTapSettings:(id)sender {
@@ -50,11 +59,7 @@
     [self presentViewController:settingsSheet animated:YES completion:nil];
 }
 
-- (void)fetchPosts {
-    // Animate activity indicator
-    [self.feedView setHidden:YES];
-    [self.activityIndicator startAnimating];
-    
+- (void)fetchPosts:(UIRefreshControl *)refreshControl {
     // Construct PFQuery
     PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
     [postQuery orderByDescending:@"createdAt"];
@@ -67,6 +72,7 @@
             self.posts = posts;
             [self.feedView reloadData];
             [self.activityIndicator stopAnimating];
+            [refreshControl endRefreshing];
             [self.feedView setHidden:NO];
         } else {
             NSLog(@"Error: %@", error.localizedDescription);
