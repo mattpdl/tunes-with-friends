@@ -7,12 +7,13 @@
 
 #import "FeedViewController.h"
 #import <Parse/Parse.h>
-#import "Post.h"
+#import "PostCell.h"
 #import "SpotifyAPI.h"
 #import "SceneDelegate.h"
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
+// UI properties
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *feedView;
 
@@ -63,7 +64,6 @@
     // Query database
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            NSLog(@"%@", posts);
             self.posts = posts;
             [self.feedView reloadData];
             [self.activityIndicator stopAnimating];
@@ -107,7 +107,9 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    // Dequeue PostCell and set cell contents
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    [cell setPost:self.posts[indexPath.row]];
     return cell;
 }
 

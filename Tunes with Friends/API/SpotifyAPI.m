@@ -60,7 +60,6 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
     NSString *endpoint = [NSString stringWithFormat:@"tracks/%@?market=US", trackID];
     
     [manager GET:endpoint parameters:nil headers:[self authHeader] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"%@", responseObject);
             completion(responseObject, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             completion(nil, error);

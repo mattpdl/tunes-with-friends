@@ -167,7 +167,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blurb" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iy-D7-EdP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iy-D7-EdP">
                                                     <rect key="frame" x="10" y="53" width="394" height="24"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -235,6 +235,14 @@
                                                 <constraint firstItem="Nbf-eV-GoD" firstAttribute="leading" secondItem="0iy-D7-EdP" secondAttribute="leading" id="ycQ-wc-k8y"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistAlbumLabel" destination="3AP-gH-NCY" id="1qa-tV-oUe"/>
+                                            <outlet property="coverArtView" destination="asb-7P-YDp" id="ZEg-Ba-Foi"/>
+                                            <outlet property="playButton" destination="rJa-qN-gyu" id="ozk-S6-naH"/>
+                                            <outlet property="postTextLabel" destination="0iy-D7-EdP" id="Slp-9p-Qmk"/>
+                                            <outlet property="titleLabel" destination="K13-Cu-IUX" id="vCm-e2-oPP"/>
+                                            <outlet property="usernameLabel" destination="v5k-bh-xIA" id="J1s-wZ-kmC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

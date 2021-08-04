@@ -23,6 +23,7 @@
 
 + (void) postSong:(NSString * _Nullable)trackID withText:(NSString * _Nullable)text completion: (PFBooleanResultBlock _Nullable)completion {
     Post *newPost = [Post new];
+    newPost.author = PFUser.currentUser;
     newPost.text = text;
     newPost.trackID = trackID;
     newPost.numLikes = @(0);
