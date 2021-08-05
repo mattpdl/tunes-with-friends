@@ -26,7 +26,7 @@
     self.tracksView.dataSource = self;
     self.tracksView.delegate = self;
     
-    const NSString *testArtistID = @"5INjqkS1o8h1imAzPqGZBb";
+    const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
     self.topTracks = [[NSMutableArray alloc] init];
     
     [SpotifyAPI getTopTracks:testArtistID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {

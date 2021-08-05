@@ -24,6 +24,7 @@
 		FD8A5B7B269F6D44000F9F33 /* Tunes_with_FriendsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B7A269F6D44000F9F33 /* Tunes_with_FriendsUITests.m */; };
 		FD9A577126B278A6000DFC6D /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9A577026B278A6000DFC6D /* TrackCell.m */; };
 		FD9A577426B28FF8000DFC6D /* TrackSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9A577326B28FF8000DFC6D /* TrackSelectViewController.m */; };
+		FDA25C6E26BB9E09004806CA /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA25C6D26BB9E09004806CA /* PlayerCell.m */; };
 		FDAF373A26A3FAA0003558B8 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDAF373926A3FAA0003558B8 /* Keys.plist */; };
 		FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF373D26A40044003558B8 /* ReusableAlert.m */; };
 		FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF374026A4049B003558B8 /* FeedViewController.m */; };
@@ -91,6 +92,8 @@
 		FD9A577026B278A6000DFC6D /* TrackCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
 		FD9A577226B28FF8000DFC6D /* TrackSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackSelectViewController.h; sourceTree = "<group>"; };
 		FD9A577326B28FF8000DFC6D /* TrackSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSelectViewController.m; sourceTree = "<group>"; };
+		FDA25C6C26BB9E09004806CA /* PlayerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
+		FDA25C6D26BB9E09004806CA /* PlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerCell.m; sourceTree = "<group>"; };
 		FDAF373926A3FAA0003558B8 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		FDAF373C26A40044003558B8 /* ReusableAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReusableAlert.h; sourceTree = "<group>"; };
 		FDAF373D26A40044003558B8 /* ReusableAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReusableAlert.m; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				FDAF373D26A40044003558B8 /* ReusableAlert.m */,
 				FD9A576F26B278A6000DFC6D /* TrackCell.h */,
 				FD9A577026B278A6000DFC6D /* TrackCell.m */,
+				FDA25C6C26BB9E09004806CA /* PlayerCell.h */,
+				FDA25C6D26BB9E09004806CA /* PlayerCell.m */,
 				FD0655BC26BA348000DCB162 /* PostCell.h */,
 				FD0655BD26BA348000DCB162 /* PostCell.m */,
 			);
@@ -533,6 +538,7 @@
 				FD2D0A4A26B142C7001BF292 /* Artist.m in Sources */,
 				FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */,
 				FD2C26E226A8BB8900006A30 /* SpotifyAPI.m in Sources */,
+				FDA25C6E26BB9E09004806CA /* PlayerCell.m in Sources */,
 				FD9A577426B28FF8000DFC6D /* TrackSelectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -202,6 +202,9 @@
                                                                 <constraint firstAttribute="height" constant="35" id="LVc-zd-zHV"/>
                                                             </constraints>
                                                             <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="didTapPlay:" destination="Vf9-VW-N8C" eventType="touchUpInside" id="zu4-D2-M5h"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
@@ -318,6 +321,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                                     <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="didTapPlay:" destination="UgH-Ud-9Xu" eventType="touchUpInside" id="zfq-dj-OPt"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
