@@ -1,20 +1,19 @@
 //
-//  PlayerCell.h
+//  PlayerViewController.h
 //  Tunes with Friends
 //
-//  Created by mattpdl on 8/4/21.
+//  Created by mattpdl on 8/5/21.
 //
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVPlayer.h>
-#import "Track.h"
+#import <AVFoundation/AVPlayerItem.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PlayerCell : UITableViewCell
+@interface PlayerViewController : UIViewController
 
 @property (strong, nonatomic) AVPlayer *player;
-@property (strong, nonatomic) Track *track;
 
 @end
 

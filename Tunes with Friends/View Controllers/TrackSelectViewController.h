@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayerViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TrackSelectViewController : UIViewController
+@interface TrackSelectViewController : PlayerViewController
 
 @end
 

@@ -6,6 +6,7 @@
 //
 
 #import "TrackCell.h"
+#import "PlayerViewController.h"
 #import "UIImageView+AFNetworking.h"
 
 @implementation TrackCell
@@ -22,8 +23,11 @@
 }
 
 - (IBAction)didTapPlay:(id)sender {
-    // Play audio sample if not already playing
-    if (self.player.rate == 0.0) {
+    self.playerItem = [[AVPlayerItem alloc] initWithURL:self.track.audioSample];;
+    
+    // Check if different track currently playing, or if audio player is otherwise uninitialized
+    if (self.playerItem != self.player.currentItem) {
+        [self.player replaceCurrentItemWithPlayerItem:self.playerItem];
         [self.player play];
         [self.playButton setBackgroundImage:[UIImage systemImageNamed:@"pause.circle"] forState:UIControlStateNormal];
     }
@@ -64,9 +68,6 @@
     // Update title, artist, and album labels
     self.titleLabel.text = self.track.title;
     self.artistAlbumLabel.text = [NSString stringWithFormat:@"%@ · %@", self.track.artist, self.track.album];
-    
-    // Initialize audio player
-    self.player = [[AVPlayer alloc] initWithURL:self.track.audioSample];
 }
 
 @end

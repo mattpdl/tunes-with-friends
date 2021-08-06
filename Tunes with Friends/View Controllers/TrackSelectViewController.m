@@ -71,6 +71,7 @@
     
     // Update cell only when new tracks fetched
     if (cell.track != self.topTracks[indexPath.row]) {
+        cell.player = self.player;
         cell.track = self.topTracks[indexPath.row];
         [cell updateCell];
     }
