@@ -18,18 +18,29 @@
     [super viewDidLoad];
     
     self.player = [[AVPlayer alloc] initWithPlayerItem:nil];
+    // TODO: use key value observing to fix pause button after playback finishes
+    //[self.player addObserver:self forKeyPath:@"rate" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
 }
 
-- (void)handlePlayback:(AVPlayerItem *)newItem {
-    // Check if different track currently playing, or if audio player is otherwise uninitialized
-    if (newItem != self.player.currentItem) {
+- (void)handlePlayback:(AVPlayerItem *)newItem forButton:(UIButton *)newButton {
+    // Check if different track currently playing, or if audio not playing
+    if (newItem != self.player.currentItem || self.player.rate == 0.0) {
         [self.player replaceCurrentItemWithPlayerItem:newItem];
         [self.player play];
+        
+        // Reset previous track's play button
+        if (self.playbackButton) {
+            [self.playbackButton setBackgroundImage:[UIImage systemImageNamed:@"play.circle"] forState:UIControlStateNormal];
+        }
+        
+        [newButton setBackgroundImage:[UIImage systemImageNamed:@"pause.circle"] forState:UIControlStateNormal];
+        self.playbackButton = newButton;
     }
     
-    // Pause audio sample if already playing
+    // Pause audio if already playing
     else {
         [self.player pause];
+        [self.playbackButton setBackgroundImage:[UIImage systemImageNamed:@"play.circle"] forState:UIControlStateNormal];
     }
 }
 

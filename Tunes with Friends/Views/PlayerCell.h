@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PlaybackDelegate
 
-- (void)handlePlayback:(AVPlayerItem *)newItem;
+- (void)handlePlayback:(AVPlayerItem *)newItem forButton:(UIButton *)newButton;
 
 @end
 
@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) UIImageView *coverArt;
 @property (weak, nonatomic) UILabel *title;
 @property (weak, nonatomic) UILabel *artistAlbum;
+@property (weak, nonatomic) UIButton *playbackButton;
 
 @property (weak, nonatomic) id<PlaybackDelegate> playbackDelegate;
 @property (strong, nonatomic) AVPlayerItem *playerItem;

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PlayerViewController : UIViewController
 
 @property (strong, nonatomic) AVPlayer *player;
+@property (weak, nonatomic) UIButton *playbackButton;
 
 @end
 

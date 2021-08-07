@@ -6,8 +6,6 @@
 //
 
 #import "TrackCell.h"
-#import "PlayerViewController.h"
-#import "UIImageView+AFNetworking.h"
 
 @implementation TrackCell
 
@@ -18,6 +16,7 @@
     self.coverArt = self.coverArtView;
     self.title = self.titleLabel;
     self.artistAlbum = self.artistAlbumLabel;
+    self.playbackButton = self.playButton;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

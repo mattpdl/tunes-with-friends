@@ -26,7 +26,7 @@
         self.playerItem = [[AVPlayerItem alloc] initWithURL:self.track.audioSample];
     }
     
-    [self.playbackDelegate handlePlayback:self.playerItem];
+    [self.playbackDelegate handlePlayback:self.playerItem forButton:self.playbackButton];
 }
 
 - (void)updateTrack {
