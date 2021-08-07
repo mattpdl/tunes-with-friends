@@ -27,7 +27,7 @@
 }
 
 - (IBAction)didTapPlay:(id)sender {
-    
+    [self didTapPlay];
 }
 
 - (void)updatePost:(Post *)post {

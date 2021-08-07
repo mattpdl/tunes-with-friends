@@ -27,20 +27,7 @@
 }
 
 - (IBAction)didTapPlay:(id)sender {
-    self.playerItem = [[AVPlayerItem alloc] initWithURL:self.track.audioSample];;
-    
-    // Check if different track currently playing, or if audio player is otherwise uninitialized
-    if (self.playerItem != self.player.currentItem) {
-        [self.player replaceCurrentItemWithPlayerItem:self.playerItem];
-        [self.player play];
-        [self.playButton setBackgroundImage:[UIImage systemImageNamed:@"pause.circle"] forState:UIControlStateNormal];
-    }
-    
-    // Pause audio sample if already playing
-    else {
-        [self.player pause];
-        [self.playButton setBackgroundImage:[UIImage systemImageNamed:@"play.circle"] forState:UIControlStateNormal];
-    }
+    [self didTapPlay];
 }
 
 @end

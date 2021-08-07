@@ -115,6 +115,7 @@
     
     // Dequeue PostCell and set cell contents
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    cell.playbackDelegate = self;
     [cell updatePost:self.posts[indexPath.row]];
     return cell;
 }

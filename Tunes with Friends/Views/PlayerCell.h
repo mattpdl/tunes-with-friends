@@ -6,9 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVPlayerItem.h>
 #import "Track.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol PlaybackDelegate
+
+- (void)handlePlayback:(AVPlayerItem *)newItem;
+
+@end
 
 @interface PlayerCell : UITableViewCell
 
@@ -17,8 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) UILabel *title;
 @property (weak, nonatomic) UILabel *artistAlbum;
 
+@property (weak, nonatomic) id<PlaybackDelegate> playbackDelegate;
+@property (strong, nonatomic) AVPlayerItem *playerItem;
 @property (strong, nonatomic) Track *track;
 
+- (void)didTapPlay;
 - (void)updateTrack;
 
 @end

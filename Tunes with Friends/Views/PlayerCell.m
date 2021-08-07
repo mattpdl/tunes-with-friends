@@ -21,6 +21,14 @@
     // Configure the view for the selected state
 }
 
+- (void)didTapPlay {
+    if (!self.playerItem) {
+        self.playerItem = [[AVPlayerItem alloc] initWithURL:self.track.audioSample];
+    }
+    
+    [self.playbackDelegate handlePlayback:self.playerItem];
+}
+
 - (void)updateTrack {
     // Update cover art image
     NSURLRequest *coverArtRequest = [NSURLRequest requestWithURL:self.track.coverArt];

@@ -6,8 +6,9 @@
 //
 
 #import "PlayerViewController.h"
+#import "PlayerCell.h"
 
-@interface PlayerViewController ()
+@interface PlayerViewController () <PlaybackDelegate>
 
 @end
 
@@ -17,6 +18,19 @@
     [super viewDidLoad];
     
     self.player = [[AVPlayer alloc] initWithPlayerItem:nil];
+}
+
+- (void)handlePlayback:(AVPlayerItem *)newItem {
+    // Check if different track currently playing, or if audio player is otherwise uninitialized
+    if (newItem != self.player.currentItem) {
+        [self.player replaceCurrentItemWithPlayerItem:newItem];
+        [self.player play];
+    }
+    
+    // Pause audio sample if already playing
+    else {
+        [self.player pause];
+    }
 }
 
 /*

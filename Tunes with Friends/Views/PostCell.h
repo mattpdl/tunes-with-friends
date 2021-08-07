@@ -23,8 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *artistAlbumLabel;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 
-@property (strong, nonatomic) AVPlayer *player;
-
 - (void)updatePost:(Post *)post;
 
 @end
