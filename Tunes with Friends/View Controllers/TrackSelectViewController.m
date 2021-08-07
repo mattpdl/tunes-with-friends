@@ -73,7 +73,7 @@
     if (cell.track != self.topTracks[indexPath.row]) {
         cell.player = self.player;
         cell.track = self.topTracks[indexPath.row];
-        [cell updateCell];
+        [cell updateTrack];
     }
     
     return cell;

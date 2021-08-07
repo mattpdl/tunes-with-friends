@@ -7,12 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVPlayer.h>
+#import "PlayerCell.h"
 #import "Post.h"
 #import "Track.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostCell : UITableViewCell
+@interface PostCell : PlayerCell
 
 // UI properties
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -23,9 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 
 @property (strong, nonatomic) AVPlayer *player;
-@property (strong, nonatomic) Track *track;
 
-- (void)setPost:(Post *)post;
+- (void)updatePost:(Post *)post;
 
 @end
 

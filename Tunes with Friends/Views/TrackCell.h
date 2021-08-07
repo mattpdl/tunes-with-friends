@@ -8,11 +8,12 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVPlayer.h>
 #import <AVFoundation/AVPlayerItem.h>
+#import "PlayerCell.h"
 #import "Track.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TrackCell : UITableViewCell
+@interface TrackCell : PlayerCell
 
 // UI properties
 @property (weak, nonatomic) IBOutlet UIImageView *coverArtView;
@@ -22,9 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) AVPlayer *player;
 @property (strong, nonatomic) AVPlayerItem *playerItem;
-@property (strong, nonatomic) Track *track;
-
-- (void)updateCell;
 
 @end
 

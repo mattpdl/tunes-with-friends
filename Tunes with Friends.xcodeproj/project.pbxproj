@@ -14,6 +14,7 @@
 		FD269B4526AF52B80020D0F4 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = FD269B4426AF52B80020D0F4 /* Track.m */; };
 		FD2C26E226A8BB8900006A30 /* SpotifyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2C26E126A8BB8900006A30 /* SpotifyAPI.m */; };
 		FD2D0A4A26B142C7001BF292 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D0A4926B142C7001BF292 /* Artist.m */; };
+		FD3A6D7126BE0E460023F588 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3A6D7026BE0E460023F588 /* PlayerCell.m */; };
 		FD44B85026BCD75900789885 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD44B84F26BCD75900789885 /* PlayerViewController.m */; };
 		FD8A5B55269F6D43000F9F33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B54269F6D43000F9F33 /* AppDelegate.m */; };
 		FD8A5B58269F6D43000F9F33 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B57269F6D43000F9F33 /* SceneDelegate.m */; };
@@ -72,6 +73,8 @@
 		FD2C26E126A8BB8900006A30 /* SpotifyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotifyAPI.m; sourceTree = "<group>"; };
 		FD2D0A4826B142C7001BF292 /* Artist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		FD2D0A4926B142C7001BF292 /* Artist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		FD3A6D6F26BE0E460023F588 /* PlayerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
+		FD3A6D7026BE0E460023F588 /* PlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerCell.m; sourceTree = "<group>"; };
 		FD44B84E26BCD75900789885 /* PlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		FD44B84F26BCD75900789885 /* PlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		FD8A5B50269F6D42000F9F33 /* Tunes with Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tunes with Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,10 +246,12 @@
 			children = (
 				FDAF373C26A40044003558B8 /* ReusableAlert.h */,
 				FDAF373D26A40044003558B8 /* ReusableAlert.m */,
-				FD9A576F26B278A6000DFC6D /* TrackCell.h */,
-				FD9A577026B278A6000DFC6D /* TrackCell.m */,
+				FD3A6D6F26BE0E460023F588 /* PlayerCell.h */,
+				FD3A6D7026BE0E460023F588 /* PlayerCell.m */,
 				FD0655BC26BA348000DCB162 /* PostCell.h */,
 				FD0655BD26BA348000DCB162 /* PostCell.m */,
+				FD9A576F26B278A6000DFC6D /* TrackCell.h */,
+				FD9A577026B278A6000DFC6D /* TrackCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				FDC36E2726A6550500D3D153 /* TabBarController.m in Sources */,
 				FD9A577126B278A6000DFC6D /* TrackCell.m in Sources */,
 				FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */,
+				FD3A6D7126BE0E460023F588 /* PlayerCell.m in Sources */,
 				FD44B85026BCD75900789885 /* PlayerViewController.m in Sources */,
 				FDBE295C26AA0704004CB3C6 /* KeyManager.m in Sources */,
 				FD0655BE26BA348000DCB162 /* PostCell.m in Sources */,
