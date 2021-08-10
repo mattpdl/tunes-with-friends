@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TrackCell : PlayerCell
 
 // UI properties
-@property (weak, nonatomic) IBOutlet UIImageView *coverArtView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *artistAlbumLabel;
-@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIImageView *trackCoverArtView;
+@property (weak, nonatomic) IBOutlet UILabel *trackTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *trackArtistAlbumLabel;
+@property (weak, nonatomic) IBOutlet UIButton *trackPlaybackButton;
 
 @end
 

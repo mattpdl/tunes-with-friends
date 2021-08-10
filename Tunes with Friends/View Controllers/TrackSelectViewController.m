@@ -6,6 +6,7 @@
 //
 
 #import "TrackSelectViewController.h"
+#import "CacheManager.h"
 #import "ComposeViewController.h"
 #import "SpotifyAPI.h"
 #import "Track.h"
@@ -26,27 +27,40 @@
     self.tracksView.dataSource = self;
     self.tracksView.delegate = self;
     
-    const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
     self.topTracks = [[NSMutableArray alloc] init];
-    
-    [SpotifyAPI getTopTracks:testArtistID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
-        
-        if (error) {
-            NSLog(@"Error: %@", error.localizedDescription);
-        } else {
-            NSArray *tracks = responseObject[@"tracks"];
-            
-            for (NSDictionary *track in tracks) {
-                [self.topTracks addObject:[[Track alloc] initWithDictionary:track]];
-            }
-            
-            [self.tracksView reloadData];
-        }
-    }];
+    [self fetchTracks];
 }
 
 - (IBAction)didTapClose:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)fetchTracks {
+    const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
+    
+    [SpotifyAPI getTopTracks:testArtistID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
+        
+        NSArray *tracks;
+        
+        // Load tracks from cache if no network response
+        if (error) {
+            NSLog(@"Error: %@", error.localizedDescription);
+            tracks = CacheManager.defaultTracks;
+        }
+        
+        // Cache tracks if loaded from network
+        else {
+            tracks = responseObject[@"tracks"];
+            [CacheManager cacheTracks:tracks];
+        }
+            
+        // Initialize topTracks with Track objects
+        for (NSDictionary *track in tracks) {
+            [self.topTracks addObject:[[Track alloc] initWithDictionary:track]];
+        }
+        
+        [self.tracksView reloadData];
+    }];
 }
 
 

@@ -29,10 +29,10 @@
     NSDictionary *coverArt = images[2];
     
     self.album = album[@"name"];
-    self.coverArt = [NSURL URLWithString:coverArt[@"url"]];
+    self.coverArtURL = [NSURL URLWithString:coverArt[@"url"]];
     
     // Store URL of 30 second audio sample
-    self.audioSample = (track[@"preview_url"] != [NSNull null]) ? [NSURL URLWithString:track[@"preview_url"]] : nil;
+    self.sampleURL = (track[@"preview_url"] != [NSNull null]) ? [NSURL URLWithString:track[@"preview_url"]] : nil;
     
     return self;
 }

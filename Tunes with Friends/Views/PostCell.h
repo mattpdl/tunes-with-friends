@@ -18,10 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 // UI properties
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postTextLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *coverArtView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *artistAlbumLabel;
-@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIImageView *postCoverArtView;
+@property (weak, nonatomic) IBOutlet UILabel *postTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postArtistAlbumLabel;
+@property (weak, nonatomic) IBOutlet UIButton *postPlaybackButton;
 
 - (void)updatePost:(Post *)post;
 

@@ -20,9 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PlayerCell : UITableViewCell
 
 // UI properties
-@property (weak, nonatomic) UIImageView *coverArt;
-@property (weak, nonatomic) UILabel *title;
-@property (weak, nonatomic) UILabel *artistAlbum;
+@property (weak, nonatomic) UIImageView *coverArtView;
+@property (weak, nonatomic) UILabel *titleLabel;
+@property (weak, nonatomic) UILabel *artistAlbumLabel;
 @property (weak, nonatomic) UIButton *playbackButton;
 
 @property (weak, nonatomic) id<PlaybackDelegate> playbackDelegate;

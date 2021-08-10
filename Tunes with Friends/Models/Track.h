@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,8 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *artist;
 @property (nonatomic, strong) NSString *album;
-@property (nonatomic, strong) NSURL *coverArt;
-@property (nonatomic, strong) NSURL *audioSample;
+@property (nonatomic, strong) NSURL *coverArtURL;
+@property (nonatomic, strong) UIImage *coverArt;
+@property (nonatomic, strong) NSURL *sampleURL;
 
 - (instancetype)initWithDictionary:(NSDictionary *)track;
 

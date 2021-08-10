@@ -14,10 +14,10 @@
     [super awakeFromNib];
     
     // Pass references to IBOutlets to PlayerCell class
-    self.coverArt = self.coverArtView;
-    self.title = self.titleLabel;
-    self.artistAlbum = self.artistAlbumLabel;
-    self.playbackButton = self.playButton;
+    self.coverArtView = self.postCoverArtView;
+    self.titleLabel = self.postTitleLabel;
+    self.artistAlbumLabel = self.postArtistAlbumLabel;
+    self.playbackButton = self.postPlaybackButton;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
