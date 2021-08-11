@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithDictionary:(NSDictionary *)track;
 - (BOOL)isEqualToTrack:(Track *)track;
+- (void)updateWithTrack:(Track *)track;
 
 @end
 

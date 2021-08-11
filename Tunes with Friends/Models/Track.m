@@ -38,7 +38,35 @@
 }
 
 - (BOOL)isEqualToTrack:(Track *)track {
+    // Return whether all properties are equivalent
     return [self.id isEqualToString:track.id] && [self.title isEqualToString:track.title] && [self.artist isEqualToString:track.artist] && [self.album isEqualToString:track.album] && [self.coverArtURL isEqual:track.coverArtURL] && [self.sampleURL isEqual:track.sampleURL];
+}
+
+- (void)updateWithTrack:(Track *)track {
+    // Change any properties that don't match the other track
+    if (![self.id isEqualToString:track.id]) {
+        self.id = track.id;
+    }
+    
+    else if (![self.title isEqualToString:track.title]) {
+        self.title = track.title;
+    }
+    
+    else if (![self.artist isEqualToString:track.artist]) {
+        self.artist = track.artist;
+    }
+    
+    else if (![self.album isEqualToString:track.album]) {
+        self.album = track.album;
+    }
+    
+    else if (![self.coverArtURL isEqual:track.coverArtURL]) {
+        self.coverArtURL = track.coverArtURL;
+    }
+    
+    else if (![self.sampleURL isEqual:track.sampleURL]) {
+        self.sampleURL = track.sampleURL;
+    }
 }
 
 @end
