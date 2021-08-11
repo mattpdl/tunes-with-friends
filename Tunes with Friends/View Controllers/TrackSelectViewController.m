@@ -38,25 +38,30 @@
 - (void)fetchTracks {
     const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
     
+    // Load tracks from cache and initialize Track objects
+    for (NSDictionary *track in CacheManager.defaultTracks) {
+        [self.topTracks addObject:[[Track alloc] initWithDictionary:track]];
+    }
+    
+    [self.tracksView reloadData];
+    
     [SpotifyAPI getTopTracks:testArtistID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
         
-        NSArray *tracks;
-        
-        // Load tracks from cache if no network response
         if (error) {
             NSLog(@"Error: %@", error.localizedDescription);
-            tracks = CacheManager.defaultTracks;
         }
         
-        // Cache tracks if loaded from network
         else {
-            tracks = responseObject[@"tracks"];
+            // Cache tracks if loaded from network
+            NSArray<NSDictionary *> *tracks = responseObject[@"tracks"];
             [CacheManager cacheTracks:tracks];
-        }
             
-        // Initialize topTracks with Track objects
-        for (NSDictionary *track in tracks) {
-            [self.topTracks addObject:[[Track alloc] initWithDictionary:track]];
+            // Update topTracks with network data
+            [self.topTracks removeAllObjects];
+            
+            for (NSDictionary *track in tracks) {
+                [self.topTracks addObject:[[Track alloc] initWithDictionary:track]];
+            }
         }
         
         [self.tracksView reloadData];

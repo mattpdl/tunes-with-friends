@@ -37,4 +37,8 @@
     return self;
 }
 
+- (BOOL)isEqualToTrack:(Track *)track {
+    return [self.id isEqualToString:track.id] && [self.title isEqualToString:track.title] && [self.artist isEqualToString:track.artist] && [self.album isEqualToString:track.album] && [self.coverArtURL isEqual:track.coverArtURL] && [self.sampleURL isEqual:track.sampleURL];
+}
+
 @end

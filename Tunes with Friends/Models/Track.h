@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSURL *sampleURL;
 
 - (instancetype)initWithDictionary:(NSDictionary *)track;
+- (BOOL)isEqualToTrack:(Track *)track;
 
 @end
 

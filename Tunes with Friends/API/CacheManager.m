@@ -9,12 +9,12 @@
 
 @implementation CacheManager
 
-+ (void)cacheTracks:(NSDictionary *)tracks {
++ (void)cacheTracks:(NSArray <NSDictionary *>*)tracks {
     [[NSUserDefaults standardUserDefaults] setObject:tracks forKey:@"default_tracks"];
 }
 
-+ (NSDictionary *)defaultTracks {
-    return [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"default_tracks"];
++ (NSArray <NSDictionary *>*)defaultTracks {
+    return [[NSUserDefaults standardUserDefaults] arrayForKey:@"default_tracks"];
 }
 
 @end
