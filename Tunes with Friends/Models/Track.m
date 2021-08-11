@@ -38,8 +38,8 @@
 }
 
 - (BOOL)isEqualToTrack:(Track *)track {
-    // Return whether all properties are equivalent
-    return [self.id isEqualToString:track.id] && [self.title isEqualToString:track.title] && [self.artist isEqualToString:track.artist] && [self.album isEqualToString:track.album] && [self.coverArtURL isEqual:track.coverArtURL] && [self.sampleURL isEqual:track.sampleURL];
+    // Return whether both track IDs are equivalent
+    return [self.id isEqualToString:track.id];
 }
 
 - (void)updateWithTrack:(Track *)track {

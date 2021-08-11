@@ -12,11 +12,13 @@
 #import "Track.h"
 #import "TrackCell.h"
 
+const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
+
 @interface TrackSelectViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tracksView;
 
-@property (strong, nonatomic) NSMutableArray<Track *> *topTracks;
+@property (strong, nonatomic) NSMutableArray<Track *> *tracks;
 
 @end
 
@@ -27,7 +29,7 @@
     self.tracksView.dataSource = self;
     self.tracksView.delegate = self;
     
-    self.topTracks = [[NSMutableArray alloc] init];
+    self.tracks = [[NSMutableArray alloc] init];
     [self fetchTracks];
 }
 
@@ -35,15 +37,18 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)fetchTracks {
-    const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
-    
-    // Load tracks from cache and initialize Track objects
+- (void)fetchCachedTracks {
+    // Initialize Track objects from cache and reload table view
     for (NSDictionary *track in CacheManager.defaultTracks) {
-        [self.topTracks addObject:[[Track alloc] initWithDictionary:track]];
+        [self.tracks addObject:[[Track alloc] initWithDictionary:track]];
     }
     
     [self.tracksView reloadData];
+}
+
+- (void)fetchTracks {
+    // Load tracks from cache
+    [self fetchCachedTracks];
     
     [SpotifyAPI getTopTracks:testArtistID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
         
@@ -52,20 +57,34 @@
         }
         
         else {
-            // Cache tracks if loaded from network
-            NSArray<NSDictionary *> *tracks = responseObject[@"tracks"];
-            [CacheManager cacheTracks:tracks];
-            
-            // Update topTracks with network data
-            [self.topTracks removeAllObjects];
-            
-            for (NSDictionary *track in tracks) {
-                [self.topTracks addObject:[[Track alloc] initWithDictionary:track]];
+            // Update cached tracks with network data
+            [self updateCachedTracks:responseObject];
+        }
+    }];
+}
+
+- (void)updateCachedTracks:(NSDictionary *)responseObject {
+    NSArray<NSDictionary *> *newTracks = responseObject[@"tracks"];
+    
+    for (NSDictionary *newTrackDict in newTracks) {
+        Track *newTrack = [[Track alloc] initWithDictionary:newTrackDict];
+        
+        // Update cached track with fetched track's metadata
+        if ([CacheManager.defaultTrackIDs containsObject:newTrack.id]) {
+            for (Track *cachedTrack in self.tracks) {
+                if ([cachedTrack isEqualToTrack:newTrack]) {
+                    [cachedTrack updateWithTrack:newTrack];
+                }
             }
         }
         
-        [self.tracksView reloadData];
-    }];
+        // New track not in cache
+        else {
+            [self.tracks addObject:newTrack];
+        }
+    }
+    
+    [self.tracksView reloadData];
 }
 
 
@@ -76,7 +95,7 @@
     // Pass selected track to compose view controller
     UITableViewCell *selectedCell = sender;
     NSIndexPath *indexPath = [self.tracksView indexPathForCell:selectedCell];
-    Track *selectedTrack = self.topTracks[indexPath.row];
+    Track *selectedTrack = self.tracks[indexPath.row];
     NSString *selectedTrackID = selectedTrack.id;
     
     ComposeViewController *composeVC = [segue destinationViewController];
@@ -89,9 +108,9 @@
     TrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell" forIndexPath:indexPath];
     
     // Update cell only when new tracks fetched
-    if (cell.track != self.topTracks[indexPath.row]) {
+    if (cell.track != self.tracks[indexPath.row]) {
         cell.playbackDelegate = self;
-        cell.track = self.topTracks[indexPath.row];
+        cell.track = self.tracks[indexPath.row];
         [cell updateTrack];
     }
     
@@ -99,7 +118,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.topTracks.count;
+    return self.tracks.count;
 }
 
 @end
