@@ -12,7 +12,7 @@
 #import "Track.h"
 #import "TrackCell.h"
 
-const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
+const NSString *testID = @"7Ln80lUS6He07XvHI8qqHH";
 
 @interface TrackSelectViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -50,7 +50,7 @@ const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
     // Load tracks from cache
     [self fetchCachedTracks];
     
-    [SpotifyAPI getTopTracks:testArtistID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
+    [SpotifyAPI getTopTracks:testID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
         
         if (error) {
             NSLog(@"Error: %@", error.localizedDescription);
@@ -84,7 +84,9 @@ const NSString *testArtistID = @"7Ln80lUS6He07XvHI8qqHH";
         }
     }
     
+    // Reload table view and cache new tracks
     [self.tracksView reloadData];
+    [CacheManager cacheTracks:newTracks];
 }
 
 

@@ -32,7 +32,9 @@
     self.coverArtURL = [NSURL URLWithString:coverArt[@"url"]];
     
     // Store URL of 30 second audio sample
-    self.sampleURL = (track[@"preview_url"] != [NSNull null]) ? [NSURL URLWithString:track[@"preview_url"]] : nil;
+    if (track[@"preview_url"] != [NSNull null]) {
+        self.sampleURL = [NSURL URLWithString:track[@"preview_url"]];
+    }
     
     return self;
 }

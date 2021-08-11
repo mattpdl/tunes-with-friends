@@ -44,8 +44,23 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
     // Construct endpoint URL and make API call
     NSString *endpoint = [NSString stringWithFormat:@"artists/%@", artistID];
     
-    [manager GET:endpoint parameters:nil headers:[self authHeader] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:endpoint parameters:nil headers:self.authHeader progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"%@", responseObject);
+            completion(responseObject, nil);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            completion(nil, error);
+        }];
+}
+
++ (void)getPlaylist:(NSString *)playlistID completion:(void (^)(NSDictionary *, NSError *))completion {
+    NSURL *baseURL = [NSURL URLWithString:baseURLString];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
+    
+    // Construct endpoint URL and make API call
+    NSString *endpoint = [NSString stringWithFormat:@"playlists/%@/tracks?market=US", playlistID];
+    
+    [manager GET:endpoint parameters:nil headers:self.authHeader progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"Fetched tracks for playlist with ID '%@'", playlistID);
             completion(responseObject, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             completion(nil, error);
@@ -59,7 +74,7 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
     // Construct endpoint URL and make API call
     NSString *endpoint = [NSString stringWithFormat:@"tracks/%@?market=US", trackID];
     
-    [manager GET:endpoint parameters:nil headers:[self authHeader] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:endpoint parameters:nil headers:self.authHeader progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             completion(responseObject, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             completion(nil, error);
@@ -73,7 +88,7 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
     // Construct endpoint URL and make API call
     NSString *endpoint = [NSString stringWithFormat:@"artists/%@/top-tracks?market=US", artistID];
     
-    [manager GET:endpoint parameters:nil headers:[self authHeader] progress:nil
+    [manager GET:endpoint parameters:nil headers:self.authHeader progress:nil
         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"Fetched top tracks for artist with ID '%@'", artistID);
             completion(responseObject, nil);
@@ -86,7 +101,16 @@ const static NSString* baseURLString = @"https://api.spotify.com/v1/";
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:baseURL];
     
-    // TODO: add endpoint parameters and make API call
+    // Construct endpoint URL and make API call
+    NSString *endpoint = [NSString stringWithFormat:@"search?q=%@&type=track&market=US", query];
+    
+    [manager GET:endpoint parameters:nil headers:self.authHeader progress:nil
+        success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"Fetched tracks matching query '%@'", query);
+            completion(responseObject, nil);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            completion(nil, error);
+        }];
 }
 
 + (NSDictionary *)authHeader {

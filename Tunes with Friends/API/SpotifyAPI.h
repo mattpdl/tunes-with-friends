@@ -13,8 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)getAccessToken:(void(^)(NSDictionary *, NSError *))completion;
 + (void)getArtist:(NSString *)artistID completion:(void (^)(NSDictionary *, NSError *))completion;
++ (void)getPlaylist:(NSString *)playlistID completion:(void (^)(NSDictionary *, NSError *))completion;
 + (void)getTrack:(NSString *)trackID completion:(void (^)(NSDictionary *, NSError *))completion;
 + (void)getTopTracks:(NSString *)artistID completion:(void (^)(NSDictionary *, NSError *))completion;
++ (void)searchTracks:(NSString *)query completion:(void (^)(NSDictionary *, NSError *))completion;
 
 @end
 
