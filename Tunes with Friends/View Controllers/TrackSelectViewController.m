@@ -12,7 +12,7 @@
 #import "Track.h"
 #import "TrackCell.h"
 
-const NSString *testID = @"7Ln80lUS6He07XvHI8qqHH";
+const NSString *testID = @"37i9dQZEVXbLRQDuF5jeBp";
 
 @interface TrackSelectViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -39,8 +39,9 @@ const NSString *testID = @"7Ln80lUS6He07XvHI8qqHH";
 
 - (void)fetchCachedTracks {
     // Initialize Track objects from cache and reload table view
-    for (NSDictionary *track in CacheManager.defaultTracks) {
-        [self.tracks addObject:[[Track alloc] initWithDictionary:track]];
+    for (NSString *trackID in CacheManager.cachedTracksOrder) {
+        NSDictionary *cachedTrack = CacheManager.cachedTracks[trackID];
+        [self.tracks addObject:[[Track alloc] initWithDictionary:cachedTrack]];
     }
     
     [self.tracksView reloadData];
@@ -50,7 +51,7 @@ const NSString *testID = @"7Ln80lUS6He07XvHI8qqHH";
     // Load tracks from cache
     [self fetchCachedTracks];
     
-    [SpotifyAPI getTopTracks:testID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
+    [SpotifyAPI getPlaylist:testID completion:^(NSDictionary * _Nonnull responseObject, NSError * _Nonnull error) {
         
         if (error) {
             NSLog(@"Error: %@", error.localizedDescription);
@@ -64,13 +65,17 @@ const NSString *testID = @"7Ln80lUS6He07XvHI8qqHH";
 }
 
 - (void)updateCachedTracks:(NSDictionary *)responseObject {
-    NSArray<NSDictionary *> *newTracks = responseObject[@"tracks"];
+    NSMutableArray<NSDictionary *> *newTracks = [NSMutableArray array];
     
-    for (NSDictionary *newTrackDict in newTracks) {
-        Track *newTrack = [[Track alloc] initWithDictionary:newTrackDict];
+    for (NSDictionary *unparsedTrackDict in responseObject[@"items"]) {
+        
+        // Parse track dictionary and add to array to be cached
+        Track *newTrack = [[Track alloc] initWithDictionary:unparsedTrackDict[@"track"]];
+        NSDictionary *newTrackDict = newTrack.dictionaryRepresentation;
+        [newTracks addObject:newTrackDict];
         
         // Update cached track with fetched track's metadata
-        if ([CacheManager.defaultTrackIDs containsObject:newTrack.id]) {
+        if (CacheManager.cachedTracks[newTrack.id]) {
             for (Track *cachedTrack in self.tracks) {
                 if ([cachedTrack isEqualToTrack:newTrack]) {
                     [cachedTrack updateWithTrack:newTrack];

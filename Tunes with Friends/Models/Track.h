@@ -17,10 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *artist;
 @property (nonatomic, strong) NSString *album;
 @property (nonatomic, strong) NSURL *coverArtURL;
-@property (nonatomic, strong) UIImage *coverArt;
 @property (nonatomic, strong) NSURL *sampleURL;
 
 - (instancetype)initWithDictionary:(NSDictionary *)track;
+- (NSDictionary *)dictionaryRepresentation;
 - (BOOL)isEqualToTrack:(Track *)track;
 - (void)updateWithTrack:(Track *)track;
 

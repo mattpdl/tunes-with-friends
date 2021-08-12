@@ -31,9 +31,7 @@
 
 - (void)updateTrack {
     // Hide playback button if audio sample not available
-    if (!self.track.sampleURL) {
-        [self.playbackButton setHidden:YES];
-    }
+    [self.playbackButton setHidden:(!self.track.sampleURL)];
     
     // Update cover art image
     [self updateCoverArt];
@@ -67,14 +65,7 @@
         
         } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
             
-            // Load cover art from cache
-            if (self.track.coverArt) {
-                self.coverArtView.image = self.track.coverArt;
-            }
-            
-            else {
-                NSLog(@"Failed to load cover art for '%@'", self.track.title);
-            }
+            NSLog(@"Failed to load cover art for '%@'", self.track.title);
         }];
 }
 

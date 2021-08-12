@@ -18,25 +18,49 @@
     self.id = track[@"id"];
     self.title = track[@"name"];
     
-    // Store name of first artist listed
-    NSArray *artists = track[@"artists"];
-    NSDictionary *primaryArtist = artists[0];
-    self.artist = primaryArtist[@"name"];
-    
-    // Store name and cover art of the track's album
-    NSDictionary *album = track[@"album"];
-    NSArray *images = album[@"images"];
-    NSDictionary *coverArt = images[2];
-    
-    self.album = album[@"name"];
-    self.coverArtURL = [NSURL URLWithString:coverArt[@"url"]];
-    
     // Store URL of 30 second audio sample
     if (track[@"preview_url"] != [NSNull null]) {
         self.sampleURL = [NSURL URLWithString:track[@"preview_url"]];
     }
     
+    // Parse data from API call
+    if (track[@"artists"]) {
+        
+        // Store name of first artist listed
+        NSArray *artists = track[@"artists"];
+        NSDictionary *primaryArtist = artists[0];
+        self.artist = primaryArtist[@"name"];
+        
+        // Store name and cover art of the track's album
+        NSDictionary *album = track[@"album"];
+        NSArray *images = album[@"images"];
+        NSDictionary *coverArt = images[2];
+        
+        self.album = album[@"name"];
+        self.coverArtURL = [NSURL URLWithString:coverArt[@"url"]];
+    }
+    
+    // Parse data from cache
+    else {
+        self.artist = track[@"artist"];
+        self.album = track[@"album"];
+        self.coverArtURL = [NSURL URLWithString:track[@"cover_art_url"]];
+    }
+    
     return self;
+}
+
+- (NSDictionary *)dictionaryRepresentation {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict setValue:self.id forKey:@"id"];
+    [dict setValue:self.title forKey:@"name"];
+    [dict setValue:self.artist forKey:@"artist"];
+    [dict setValue:self.album forKey:@"album"];
+    [dict setValue:self.coverArtURL.absoluteString forKey:@"cover_art_url"];
+    [dict setValue:self.sampleURL.absoluteString forKey:@"preview_url"];
+    
+    return dict;
 }
 
 - (BOOL)isEqualToTrack:(Track *)track {
@@ -45,30 +69,13 @@
 }
 
 - (void)updateWithTrack:(Track *)track {
-    // Change any properties that don't match the other track
-    if (![self.id isEqualToString:track.id]) {
-        self.id = track.id;
-    }
-    
-    else if (![self.title isEqualToString:track.title]) {
-        self.title = track.title;
-    }
-    
-    else if (![self.artist isEqualToString:track.artist]) {
-        self.artist = track.artist;
-    }
-    
-    else if (![self.album isEqualToString:track.album]) {
-        self.album = track.album;
-    }
-    
-    else if (![self.coverArtURL isEqual:track.coverArtURL]) {
-        self.coverArtURL = track.coverArtURL;
-    }
-    
-    else if (![self.sampleURL isEqual:track.sampleURL]) {
-        self.sampleURL = track.sampleURL;
-    }
+    // Change all properties to match the other track
+    self.id = track.id;
+    self.title = track.title;
+    self.artist = track.artist;
+    self.album = track.album;
+    self.coverArtURL = track.coverArtURL;
+    self.sampleURL = track.sampleURL;
 }
 
 @end

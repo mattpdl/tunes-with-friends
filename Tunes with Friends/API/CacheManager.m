@@ -10,42 +10,30 @@
 @implementation CacheManager
 
 + (void)cacheTracks:(NSArray<NSDictionary *> *)tracks {
-    // Add track IDs to a set
-    NSMutableSet<NSString *> *trackIDs = [[NSMutableSet alloc] init];
+    NSMutableDictionary<NSString *, NSDictionary *> *tracksDict = [NSMutableDictionary dictionary];
+    NSMutableArray<NSString *> *tracksOrder = [NSMutableArray array];
     
+    // Store order of track IDs in an array
     for (NSDictionary *track in tracks) {
-        [trackIDs addObject:track[@"id"]];
+        [tracksDict setObject:track forKey:track[@"id"]];
+        [tracksOrder addObject:track[@"id"]];
     }
     
-    [self storeIDs:trackIDs andTracks:tracks];
+    [self storeTracks:tracksDict andOrder:tracksOrder];
 }
 
-+ (void)cachePlaylist:(NSArray<NSDictionary *> *)items {
-    // Add track IDs to a set
-    NSMutableSet<NSString *> *trackIDs = [[NSMutableSet alloc] init];
-    NSMutableArray<NSDictionary *> *tracks = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *item in items) {
-        NSDictionary *track = item[@"track"];
-        [trackIDs addObject:track[@"id"]];
-        [tracks addObject:track];
-    }
-    
-    [self storeIDs:trackIDs andTracks:tracks];
++ (NSDictionary<NSString *,NSDictionary *> *)cachedTracks {
+    return [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"cached_tracks"];
 }
 
-+ (NSSet<NSString *> *)defaultTrackIDs {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:@"default_track_ids"];
++ (NSArray<NSString *> *)cachedTracksOrder {
+    return [[NSUserDefaults standardUserDefaults] arrayForKey:@"cached_tracks_order"];
 }
 
-+ (NSArray<NSDictionary *> *)defaultTracks {
-    return [[NSUserDefaults standardUserDefaults] arrayForKey:@"default_tracks"];
-}
-
-+ (void)storeIDs:(NSSet<NSString *> *)trackIDs andTracks:(NSArray<NSDictionary *> *)tracks {
-    // Cache track IDs and tracks array
-    //[[NSUserDefaults standardUserDefaults] setObject:trackIDs forKey:@"default_track_ids"];
-    [[NSUserDefaults standardUserDefaults] setObject:tracks forKey:@"default_tracks"];
++ (void)storeTracks:(NSDictionary<NSString *,NSDictionary *> *)tracks andOrder:(NSArray<NSString *> *)tracksOrder {
+    // Cache track IDs, corresponding track dictionaries, and order of track IDs
+    [[NSUserDefaults standardUserDefaults] setObject:tracks forKey:@"cached_tracks"];
+    [[NSUserDefaults standardUserDefaults] setObject:tracksOrder forKey:@"cached_tracks_order"];
 }
 
 @end

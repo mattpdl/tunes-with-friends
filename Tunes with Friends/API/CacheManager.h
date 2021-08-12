@@ -13,9 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CacheManager : NSObject
 
 + (void)cacheTracks:(NSArray<NSDictionary *> *)tracks;
-+ (void)cachePlaylist:(NSArray<NSDictionary *> *)items;
-+ (NSSet<NSString *> *)defaultTrackIDs;
-+ (NSArray<NSDictionary *> *)defaultTracks;
++ (NSDictionary<NSString *, NSDictionary *> *)cachedTracks;
++ (NSArray<NSString *> *)cachedTracksOrder;
 
 @end
 
