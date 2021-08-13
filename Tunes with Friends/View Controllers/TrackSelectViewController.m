@@ -33,7 +33,7 @@ const NSString *testID = @"37i9dQZEVXbLRQDuF5jeBp";
     [self fetchTracks];
 }
 
-- (IBAction)didTapClose:(id)sender {
+- (IBAction)didTapCancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

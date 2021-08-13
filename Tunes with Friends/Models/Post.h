@@ -11,16 +11,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Post : PFObject<PFSubclassing>
 
-@property (nonatomic, strong) NSString *postID;
-@property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *author;
+@property (nonatomic, strong) NSString *groupID;
 
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *trackID;
 @property (nonatomic, strong) NSNumber *numLikes;
 @property (nonatomic, strong) NSNumber *numComments;
 
-+ (void) postSong:(NSString * _Nullable)trackID withText:(NSString * _Nullable)text completion: (PFBooleanResultBlock _Nullable)completion;
++ (void)postSong:(NSString * _Nullable)trackID inGroup:(NSString * _Nullable)groupID withText:(NSString * _Nullable)text completion:(PFBooleanResultBlock _Nullable)completion;
 
 @end
 

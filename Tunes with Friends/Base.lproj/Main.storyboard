@@ -114,6 +114,54 @@
             </objects>
             <point key="canvasLocation" x="751" y="866"/>
         </scene>
+        <!--Groups-->
+        <scene sceneID="K6A-bw-Nlh">
+            <objects>
+                <viewController id="dla-j8-Ebx" customClass="GroupListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ucl-5t-edb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zI0-Fp-rBE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="140" id="H0x-aT-zDs">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H0x-aT-zDs" id="hae-B6-U8x">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ioc-4J-eKN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zI0-Fp-rBE" firstAttribute="leading" secondItem="ucl-5t-edb" secondAttribute="leading" id="0b2-8j-cq3"/>
+                            <constraint firstItem="zI0-Fp-rBE" firstAttribute="top" secondItem="ucl-5t-edb" secondAttribute="top" id="2vh-wb-pHH"/>
+                            <constraint firstAttribute="trailing" secondItem="zI0-Fp-rBE" secondAttribute="trailing" id="DFJ-wC-Dpl"/>
+                            <constraint firstAttribute="bottom" secondItem="zI0-Fp-rBE" secondAttribute="bottom" id="vHF-5I-fab"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Groups" image="person.3" catalog="system" id="uCk-bS-U24"/>
+                    <navigationItem key="navigationItem" title="Groups" id="lrw-Nl-UIk">
+                        <barButtonItem key="rightBarButtonItem" title="Create" image="plus" catalog="system" id="On1-iv-wpZ">
+                            <connections>
+                                <segue destination="Npl-xc-7Br" kind="presentation" id="kCV-jD-fly"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="groupsView" destination="zI0-Fp-rBE" id="X90-pJ-Uho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fvq-iU-0yO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1451" y="1546"/>
+        </scene>
         <!--New Post-->
         <scene sceneID="rw0-KT-OVc">
             <objects>
@@ -130,6 +178,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkv-nV-UW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="751" y="1546"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="0kv-MN-nNU">
+            <objects>
+                <navigationController id="fqI-Nc-ekg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Groups" image="person.3" catalog="system" id="QdI-HC-9WB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8wE-is-3zf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dla-j8-Ebx" kind="relationship" relationship="rootViewController" id="mhT-qH-raa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Opp-BJ-3D3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="866"/>
         </scene>
         <!--Tunes Feed-->
         <scene sceneID="aXO-8X-V1F">
@@ -361,9 +426,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select a song" id="QUI-hn-FVf">
-                        <barButtonItem key="leftBarButtonItem" title="Close" image="xmark" catalog="system" id="VBG-bK-YPR">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" image="xmark" catalog="system" id="VBG-bK-YPR">
                             <connections>
-                                <action selector="didTapClose:" destination="a0T-dt-FlZ" id="euq-gs-q0U"/>
+                                <action selector="didTapCancel:" destination="a0T-dt-FlZ" id="euq-gs-q0U"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -374,6 +439,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rC-qY-eIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750.72463768115949" y="2226.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PuM-eh-qG3">
+            <objects>
+                <navigationController id="Npl-xc-7Br" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nSA-eb-j5a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UTP-W2-NAJ" kind="relationship" relationship="rootViewController" id="3KT-O5-hVm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vc0-l2-6Jx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1451" y="2227"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="NCd-vY-SfE">
@@ -428,6 +509,57 @@
             </objects>
             <point key="canvasLocation" x="751" y="2906"/>
         </scene>
+        <!--Create a group-->
+        <scene sceneID="ung-U7-mLF">
+            <objects>
+                <viewController id="UTP-W2-NAJ" customClass="GroupCreationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AUu-7B-OEN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duf-n8-Hri">
+                                <rect key="frame" x="8" y="64" width="398" height="34"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-jK-YAx">
+                                <rect key="frame" x="8" y="106" width="398" height="34"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A5U-wd-wra"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ipa-jK-YAx" firstAttribute="leading" secondItem="A5U-wd-wra" secondAttribute="leading" constant="8" id="0ts-eq-PCb"/>
+                            <constraint firstItem="A5U-wd-wra" firstAttribute="trailing" secondItem="duf-n8-Hri" secondAttribute="trailing" constant="8" id="TXz-jd-d02"/>
+                            <constraint firstItem="duf-n8-Hri" firstAttribute="top" secondItem="A5U-wd-wra" secondAttribute="top" constant="8" id="YwS-Bo-6bN"/>
+                            <constraint firstItem="duf-n8-Hri" firstAttribute="leading" secondItem="A5U-wd-wra" secondAttribute="leading" constant="8" id="p1r-hb-aeH"/>
+                            <constraint firstItem="ipa-jK-YAx" firstAttribute="top" secondItem="duf-n8-Hri" secondAttribute="bottom" constant="8" id="q3k-pc-ILv"/>
+                            <constraint firstItem="A5U-wd-wra" firstAttribute="trailing" secondItem="ipa-jK-YAx" secondAttribute="trailing" constant="8" id="x6g-lJ-qCN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a group" id="Nx1-62-BHT">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" image="xmark" catalog="system" id="fxO-a7-JUL">
+                            <connections>
+                                <action selector="didTapCancel:" destination="UTP-W2-NAJ" id="qin-yX-S08"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create" image="checkmark" catalog="system" id="B18-gU-aTT">
+                            <connections>
+                                <action selector="didTapCreate:" destination="UTP-W2-NAJ" id="C6a-6w-7Nu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionField" destination="ipa-jK-YAx" id="ucu-2b-mJS"/>
+                        <outlet property="nameField" destination="duf-n8-Hri" id="ou8-qU-enF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8kW-N1-8kF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1451" y="2906"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aal-TG-M2H">
             <objects>
@@ -441,6 +573,7 @@
                     <connections>
                         <segue destination="s2U-Kk-EeV" kind="relationship" relationship="viewControllers" id="GYx-fB-0Tk"/>
                         <segue destination="olF-o3-sLx" kind="relationship" relationship="viewControllers" id="MTi-aU-6FD"/>
+                        <segue destination="fqI-Nc-ekg" kind="relationship" relationship="viewControllers" id="adT-sC-3bI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdE-Os-0zJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -449,10 +582,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="music.note.house" catalog="system" width="128" height="106"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="plus.square" catalog="system" width="128" height="114"/>
         <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>

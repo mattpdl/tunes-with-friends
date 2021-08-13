@@ -27,6 +27,10 @@
 		FD8A5B7B269F6D44000F9F33 /* Tunes_with_FriendsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8A5B7A269F6D44000F9F33 /* Tunes_with_FriendsUITests.m */; };
 		FD9A577126B278A6000DFC6D /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9A577026B278A6000DFC6D /* TrackCell.m */; };
 		FD9A577426B28FF8000DFC6D /* TrackSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9A577326B28FF8000DFC6D /* TrackSelectViewController.m */; };
+		FDA77C9526C616BA00059AF0 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA77C9426C616BA00059AF0 /* Group.m */; };
+		FDA77C9826C6229400059AF0 /* TWFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA77C9726C6229300059AF0 /* TWFUser.m */; };
+		FDA77C9B26C62CB700059AF0 /* GroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA77C9A26C62CB700059AF0 /* GroupListViewController.m */; };
+		FDA77C9E26C6315200059AF0 /* GroupCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA77C9D26C6315200059AF0 /* GroupCreationViewController.m */; };
 		FDAF373A26A3FAA0003558B8 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDAF373926A3FAA0003558B8 /* Keys.plist */; };
 		FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF373D26A40044003558B8 /* ReusableAlert.m */; };
 		FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF374026A4049B003558B8 /* FeedViewController.m */; };
@@ -100,6 +104,14 @@
 		FD9A577026B278A6000DFC6D /* TrackCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
 		FD9A577226B28FF8000DFC6D /* TrackSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackSelectViewController.h; sourceTree = "<group>"; };
 		FD9A577326B28FF8000DFC6D /* TrackSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSelectViewController.m; sourceTree = "<group>"; };
+		FDA77C9326C616BA00059AF0 /* Group.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		FDA77C9426C616BA00059AF0 /* Group.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		FDA77C9626C6229300059AF0 /* TWFUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWFUser.h; sourceTree = "<group>"; };
+		FDA77C9726C6229300059AF0 /* TWFUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWFUser.m; sourceTree = "<group>"; };
+		FDA77C9926C62CB700059AF0 /* GroupListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupListViewController.h; sourceTree = "<group>"; };
+		FDA77C9A26C62CB700059AF0 /* GroupListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupListViewController.m; sourceTree = "<group>"; };
+		FDA77C9C26C6315200059AF0 /* GroupCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupCreationViewController.h; sourceTree = "<group>"; };
+		FDA77C9D26C6315200059AF0 /* GroupCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupCreationViewController.m; sourceTree = "<group>"; };
 		FDAF373926A3FAA0003558B8 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		FDAF373C26A40044003558B8 /* ReusableAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReusableAlert.h; sourceTree = "<group>"; };
 		FDAF373D26A40044003558B8 /* ReusableAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReusableAlert.m; sourceTree = "<group>"; };
@@ -266,10 +278,14 @@
 			children = (
 				FD2D0A4826B142C7001BF292 /* Artist.h */,
 				FD2D0A4926B142C7001BF292 /* Artist.m */,
+				FDA77C9326C616BA00059AF0 /* Group.h */,
+				FDA77C9426C616BA00059AF0 /* Group.m */,
 				FDC36E2926A6592C00D3D153 /* Post.h */,
 				FDC36E2A26A6592C00D3D153 /* Post.m */,
 				FD269B4326AF52B80020D0F4 /* Track.h */,
 				FD269B4426AF52B80020D0F4 /* Track.m */,
+				FDA77C9626C6229300059AF0 /* TWFUser.h */,
+				FDA77C9726C6229300059AF0 /* TWFUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +297,10 @@
 				FDC36E2026A6083100D3D153 /* ComposeViewController.m */,
 				FDAF373F26A4049B003558B8 /* FeedViewController.h */,
 				FDAF374026A4049B003558B8 /* FeedViewController.m */,
+				FDA77C9C26C6315200059AF0 /* GroupCreationViewController.h */,
+				FDA77C9D26C6315200059AF0 /* GroupCreationViewController.m */,
+				FDA77C9926C62CB700059AF0 /* GroupListViewController.h */,
+				FDA77C9A26C62CB700059AF0 /* GroupListViewController.m */,
 				FDE54AA526A288F90055B200 /* LoginViewController.h */,
 				FDE54AA626A288F90055B200 /* LoginViewController.m */,
 				FD44B84E26BCD75900789885 /* PlayerViewController.h */,
@@ -539,9 +559,13 @@
 				FD269B4526AF52B80020D0F4 /* Track.m in Sources */,
 				FDE54AA726A288F90055B200 /* LoginViewController.m in Sources */,
 				FDC36E2B26A6592C00D3D153 /* Post.m in Sources */,
+				FDA77C9E26C6315200059AF0 /* GroupCreationViewController.m in Sources */,
 				FDC36E2126A6083100D3D153 /* ComposeViewController.m in Sources */,
+				FDA77C9526C616BA00059AF0 /* Group.m in Sources */,
 				FDC36E2726A6550500D3D153 /* TabBarController.m in Sources */,
 				FD9A577126B278A6000DFC6D /* TrackCell.m in Sources */,
+				FDA77C9B26C62CB700059AF0 /* GroupListViewController.m in Sources */,
+				FDA77C9826C6229400059AF0 /* TWFUser.m in Sources */,
 				FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */,
 				FD3A6D7126BE0E460023F588 /* PlayerCell.m in Sources */,
 				FD44B85026BCD75900789885 /* PlayerViewController.m in Sources */,

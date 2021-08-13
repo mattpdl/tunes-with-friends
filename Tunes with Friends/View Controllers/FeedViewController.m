@@ -71,12 +71,13 @@
         if (posts) {
             self.posts = posts;
             [self.feedView reloadData];
-            [self.activityIndicator stopAnimating];
-            [refreshControl endRefreshing];
             [self.feedView setHidden:NO];
         } else {
             NSLog(@"Error: %@", error.localizedDescription);
         }
+        
+        [self.activityIndicator stopAnimating];
+        [refreshControl endRefreshing];
     }];
 }
 

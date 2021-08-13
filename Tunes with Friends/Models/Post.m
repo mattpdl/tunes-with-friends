@@ -9,9 +9,8 @@
 
 @implementation Post
 
-@dynamic postID;
-@dynamic userID;
 @dynamic author;
+@dynamic groupID;
 @dynamic text;
 @dynamic trackID;
 @dynamic numLikes;
@@ -21,9 +20,11 @@
     return @"Post";
 }
 
-+ (void) postSong:(NSString * _Nullable)trackID withText:(NSString * _Nullable)text completion: (PFBooleanResultBlock _Nullable)completion {
++ (void)postSong:(NSString * _Nullable)trackID inGroup:(NSString * _Nullable)groupID withText:(NSString * _Nullable)text completion:(PFBooleanResultBlock _Nullable)completion {
+    
     Post *newPost = [Post new];
     newPost.author = PFUser.currentUser;
+    newPost.groupID = groupID;
     newPost.text = text;
     newPost.trackID = trackID;
     newPost.numLikes = @(0);
