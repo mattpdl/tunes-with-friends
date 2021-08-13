@@ -31,6 +31,7 @@
 		FDA77C9826C6229400059AF0 /* TWFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA77C9726C6229300059AF0 /* TWFUser.m */; };
 		FDA77C9B26C62CB700059AF0 /* GroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA77C9A26C62CB700059AF0 /* GroupListViewController.m */; };
 		FDA77C9E26C6315200059AF0 /* GroupCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA77C9D26C6315200059AF0 /* GroupCreationViewController.m */; };
+		FDA77CA126C65B3B00059AF0 /* GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA77CA026C65B3B00059AF0 /* GroupCell.m */; };
 		FDAF373A26A3FAA0003558B8 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDAF373926A3FAA0003558B8 /* Keys.plist */; };
 		FDAF373E26A40044003558B8 /* ReusableAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF373D26A40044003558B8 /* ReusableAlert.m */; };
 		FDAF374126A4049B003558B8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAF374026A4049B003558B8 /* FeedViewController.m */; };
@@ -112,6 +113,8 @@
 		FDA77C9A26C62CB700059AF0 /* GroupListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupListViewController.m; sourceTree = "<group>"; };
 		FDA77C9C26C6315200059AF0 /* GroupCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupCreationViewController.h; sourceTree = "<group>"; };
 		FDA77C9D26C6315200059AF0 /* GroupCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupCreationViewController.m; sourceTree = "<group>"; };
+		FDA77C9F26C65B3B00059AF0 /* GroupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupCell.h; sourceTree = "<group>"; };
+		FDA77CA026C65B3B00059AF0 /* GroupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupCell.m; sourceTree = "<group>"; };
 		FDAF373926A3FAA0003558B8 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		FDAF373C26A40044003558B8 /* ReusableAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReusableAlert.h; sourceTree = "<group>"; };
 		FDAF373D26A40044003558B8 /* ReusableAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReusableAlert.m; sourceTree = "<group>"; };
@@ -261,6 +264,8 @@
 		FDAF373B26A3FFE5003558B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FDA77C9F26C65B3B00059AF0 /* GroupCell.h */,
+				FDA77CA026C65B3B00059AF0 /* GroupCell.m */,
 				FDAF373C26A40044003558B8 /* ReusableAlert.h */,
 				FDAF373D26A40044003558B8 /* ReusableAlert.m */,
 				FD3A6D6F26BE0E460023F588 /* PlayerCell.h */,
@@ -556,6 +561,7 @@
 				FD8A5B55269F6D43000F9F33 /* AppDelegate.m in Sources */,
 				FD8A5B66269F6D43000F9F33 /* main.m in Sources */,
 				FD8A5B58269F6D43000F9F33 /* SceneDelegate.m in Sources */,
+				FDA77CA126C65B3B00059AF0 /* GroupCell.m in Sources */,
 				FD269B4526AF52B80020D0F4 /* Track.m in Sources */,
 				FDE54AA726A288F90055B200 /* LoginViewController.m in Sources */,
 				FDC36E2B26A6592C00D3D153 /* Post.m in Sources */,

@@ -6,6 +6,7 @@
 //
 
 #import "FeedViewController.h"
+#import "ComposeViewController.h"
 #import <Parse/Parse.h>
 #import "PostCell.h"
 #import "SpotifyAPI.h"
@@ -71,13 +72,13 @@
         if (posts) {
             self.posts = posts;
             [self.feedView reloadData];
-            [self.feedView setHidden:NO];
         } else {
             NSLog(@"Error: %@", error.localizedDescription);
         }
         
         [self.activityIndicator stopAnimating];
         [refreshControl endRefreshing];
+        [self.feedView setHidden:NO];
     }];
 }
 

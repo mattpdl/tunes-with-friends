@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Group : PFObject<PFSubclassing>
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *groupDescription;
 @property (nonatomic, strong) NSNumber *numMembers;
 @property (nonatomic, strong) PFUser *owner;
 

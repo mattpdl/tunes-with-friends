@@ -22,7 +22,7 @@
     
     Group *newGroup = [Group new];
     newGroup.name = name;
-    newGroup.description = description;
+    newGroup.groupDescription = description;
     newGroup.numMembers = @(0);
     newGroup.owner = PFUser.currentUser;
     

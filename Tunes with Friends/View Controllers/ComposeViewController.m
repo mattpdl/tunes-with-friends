@@ -28,6 +28,7 @@
 - (IBAction)didTapPost:(id)sender {
     // Save post in backend
     [Post postSong:self.selectedTrackID inGroup:nil withText:self.postTextView.text completion:^(BOOL succeeded, NSError * _Nullable error) {
+        
         if (succeeded) {
             NSLog(@"%@ posted song ID %@ with text: %@", [PFUser currentUser].username, self.selectedTrackID, self.postTextView.text);
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -40,11 +41,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView {
     // Display placeholder text if no text entered
-    if ([textView hasText]) {
-        [self.placeholderLabel setHidden:YES];
-    } else {
-        [self.placeholderLabel setHidden:NO];
-    }
+    [self.placeholderLabel setHidden:[self.postTextView hasText]];
 }
 
 /*

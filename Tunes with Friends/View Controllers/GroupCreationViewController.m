@@ -6,6 +6,8 @@
 //
 
 #import "GroupCreationViewController.h"
+#import "Group.h"
+#import "ReusableAlert.h"
 
 @interface GroupCreationViewController ()
 
@@ -18,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.nameField becomeFirstResponder];
 }
 
 - (IBAction)didTapCancel:(id)sender {
@@ -26,7 +28,16 @@
 }
 
 - (IBAction)didTapCreate:(id)sender {
-    
+    [Group createGroup:self.nameField.text withDescription:self.descriptionField.text completion:^(BOOL succeeded, NSError * _Nullable error) {
+        
+        if (succeeded) {
+            NSLog(@"Created group '%@'", self.nameField.text);
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            NSLog(@"Error: %@", error.localizedDescription);
+            [ReusableAlert show:self withTitle:@"Group Creation Failed" withMsg:@"Check your internet connection and try again."];
+        }
+    }];
 }
 
 /*
